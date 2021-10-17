@@ -1,0 +1,648 @@
+@media screen and ( max-width: 992px )
+    .header
+        padding-inline: 3em !important
+
+        &::after
+            clip-path: polygon(0% 50%, 250% 100%, 0% 0%) !important
+
+        section
+            &:nth-of-type(1)
+                width: 50% !important
+
+            &:nth-of-type(2)
+                display: none
+
+            &:nth-of-type(3)
+                width: 50% !important
+                justify-content: space-evenly !important
+
+                .trendingProductsFetchError
+                    position: relative !important
+                    height: max-content !important
+                    width: 250px !important
+                    opacity: 1 !important
+                    transform: translate(0px) !important
+
+                div
+                    position: relative !important
+                    height: 125px !important
+                    width: 250px !important
+
+                    &:hover
+                        transform: scale(1.05) !important
+
+    .trendingProductsBrands
+        margin-block: 8em 5em !important
+
+        svg
+            width: 2em !important
+            height: 2em !important
+
+@media screen and ( max-width: 768px )
+    .header
+        padding-inline: 2em !important
+        flex-direction: column !important
+
+        section
+            justify-content: space-evenly
+
+            &:nth-of-type(1)
+                width: 100% !important
+                margin-top: 2em !important
+                align-items: center !important
+
+                button
+                    padding: 1.25em 4em !important
+                    border-radius: 1em !important
+                    font-size: 18px !important
+
+            &:nth-of-type(3)
+                width: 100% !important
+                flex-direction: row !important
+
+                div
+                    position: relative !important
+                    height: 75px !important
+                    width: 150px !important
+                    opacity: 1 !important
+                    transform: translate(0px) !important
+
+                    &:hover
+                        transform: scale(1.05) !important
+
+                .trendingProductsFetchError
+                    width: 50% !important
+                    height: 100% !important
+                    flex-direction: row !important
+                    justify-content: center !important
+
+                    *
+                        margin-inline: 0.5em !important
+
+    .categoriesNavigator
+        .categoryIcons
+            div
+                margin: 0.5em !important
+                padding: 0.25em 0.75em !important
+
+                svg
+                    width: 40px !important
+                    height: 40px !important
+                    padding: 0.5em !important
+
+        .categoryTourProducts
+            padding: 0em !important
+
+            .categoryTourProductComponent
+                width: 200px !important
+                height: 200px !important
+
+    .trendingNavigator
+        h1
+            font-size: 28px !important
+
+        .trendingProductComponent
+            width: 30em !important
+            height: 16em !important
+
+            .trendingProductComponentInfo
+                padding: 1em !important
+
+        .trendingProductsBrands
+            margin-block: 5em !important
+                    
+@media screen and ( max-width: 600px )
+    .header
+        text-align: center !important
+
+        section
+            &:nth-of-type(3)
+                padding: 2em 0em !important 
+
+    .categoriesNavigator
+        padding: 5em 2em 20em 2em !important
+        text-align: center !important
+
+        .categoryIcons
+            div
+                margin: 0.5em !important
+                padding: 0em 0.5em !important
+                border-radius: 15px !important
+
+        .categoryTourProductsMessage
+            padding: 2em 5em !important
+
+    .trendingNavigator
+        padding: 3em !important
+
+        .trendingProductsContainer
+            margin-left: 28em !important
+
+            .trendingProductComponent
+                width: 20em !important
+                height: 25em !important
+                flex-direction: column !important
+                
+                .trendingProductComponentInfo
+                    width: 100% !important
+                    padding: 0em 1em 2em 1em !important
+                    align-items: center !important
+
+    .trendingProductsBrands
+        margin-block: 5em !important
+        flex-wrap: wrap
+
+        svg
+            margin: 1em !important
+
+@media screen and ( max-width: 500px )
+    .header
+        section
+            &:nth-of-type(3)
+                display: none !important
+
+    .categoriesNavigator
+        .categoryTourProducts
+            .categoryTourProductComponent
+                width: 150px !important
+                height: 175px !important
+
+                .categoryTourProductInfo
+                    font-size: 14px !important
+
+                    button
+                        font-size: 12px !important
+                        padding: 0.75em 1.25em !important
+
+    .trendingNavigator
+        padding: 2em !important
+
+        h1
+            text-align: left !important
+
+        .trendingProductsContainer
+            margin-left: 20em !important
+
+            .trendingProductComponent
+                width: 15em !important
+                height: 20em !important
+
+                .trendingProductComponentInfo
+                    padding-bottom: 1em !important
+
+                    p
+                        margin: 0px !important
+
+                    button
+                        margin-top: 2em !important
+                        padding: 0.75em 3em !important
+                        font-size: 12px !important
+    
+    .trendingProductsBrands
+        margin-block: 4em 2em !important
+    
+@media screen and ( max-width: 400px )
+    .header
+        section
+            padding: 1em 3em !important
+            font-size: 17px !important
+
+            h1
+                font-size: 20px !important
+
+            button
+                padding: 1em 3em !important
+                font-size: 17px !important
+
+    .categoriesNavigator
+        h1
+            font-size: 28px !important
+
+        .categoryIcons
+            div
+                p
+                    font-size: 12px !important
+
+        .headerCategoryTour
+            .categoryTourProductsMessage
+                font-size: 16px !important
+
+    .trendingNavigator
+        padding: 1em !important
+
+        h1
+            text-align: center !important
+            font-size: 24px !important
+
+        .trendingProductsContainer
+            height: 22em !important
+
+            .trendingProductComponent
+                width: 10em !important
+                height: 13em !important
+                padding: 0.5em !important
+
+                h2
+                    margin-block: 0.5em !important
+                    font-size: 17px !important
+
+                h5
+                    display: none !important
+
+                .trendingProductComponentInfo
+                    button
+                        margin-top: 1em !important
+                        font-size: 11px !important
+
+        .trendingProductsBrands
+            margin-block: 0em 3em !important
+
+.container
+    margin: 0px
+    padding: 0px
+
+.header
+    display: flex
+    flex-direction: row
+    justify-content: space-around
+    align-items: center
+    height: 90vh
+    width: 100%
+    padding: 5em
+    background: linear-gradient(90deg, #83a6db, #4e8cda)
+
+    &::before
+        content: ""
+        width: 100%
+        height: 150px
+        position: absolute
+        left: 0
+        bottom: 0
+        background-color: #f4f8fa
+        clip-path: polygon(0% 100%, 125% 60%, 0% 0%)
+
+    &::after
+        content: ""
+        width: 100%
+        height: 200px
+        position: absolute
+        left: 0px
+        top: 0px
+        background-color: #f4f8fa
+        -webkit-clip-path: polygon(0% 100%, 125% 60%, 0% 0%)
+        clip-path: polygon(0% 50%, 250% 150%, 0% -50%)
+        z-index: 1
+
+    section
+        height: 100%
+        padding: 2em
+        display: flex
+        flex-direction: column
+        justify-content: center
+        align-items: center
+        color: rgb(229, 248, 255)
+
+        &:nth-of-type(1)
+            width: 30%
+            align-items: baseline
+
+            h2
+                font-size: 28px
+                font-family: 'Varela Round'
+
+            p
+                font-size: 18px
+                font-family: 'Alegreya Sans'
+
+            button
+                margin-block: 1em
+                padding: 1.5em 2.5em
+                border: none
+                border-radius: 1.5em
+                color: white
+                background-color: #317bd7
+                box-shadow: 0px 10px 30px -15px black
+                font-size: 16px
+                font-family: 'Alegreya Sans'
+                cursor: pointer
+                transition-duration: 0.3s
+
+                &:hover
+                    transform: translateY(10px) scale(0.95)
+                    box-shadow: 0px 15px 20px -12px black
+
+        &:nth-of-type(2)
+            width: 50%
+
+        &:nth-of-type(3)
+            width: 20%
+
+            div
+                width: 150px
+                height: 100px
+                margin-block: 0.5em
+                position: relative
+                border-radius: 0.5em
+                transition-duration: 0.3s
+
+                &:nth-of-type(1)
+                    margin-top: auto
+
+                &:not(.trendingProductsFetchError)
+                    cursor: pointer
+                
+                    &:hover
+                        opacity: 1
+                        transform: scale(1.1)
+
+            .trendingProductsFetchError
+                width: 100%
+                height: auto
+                padding-block: 1em
+                display: flex
+                flex-direction: column
+                justify-content: center
+                align-items: center
+                position: relative
+                background-color: aliceblue
+                
+                p
+                    color: #6b6b6b
+                    font-family: 'Varela Round'
+
+                svg
+                    width: 35px
+                    height: 35px
+                    margin-block: 1em
+                    color: #6b6b6b
+
+    .headerImage
+        height: 125%
+        background-image: url("/Home/pngegg.png")
+        background-size: contain
+        background-position: center
+        background-repeat: no-repeat
+        transform: translateY(8em)
+
+.categoriesNavigator
+    padding: 5em 5em 20em 5em
+    background-color: #f4f8fa
+
+    h1
+        margin-block: 0.5em
+        color: #093a76
+        font-family: 'Varela Round'
+
+    .categoryIcons
+        padding: 2em 0em
+        display: flex
+        flex-direction: row
+        justify-content: space-evenly
+        align-items: center
+        flex-wrap: wrap
+
+        div
+            margin: 1em
+            padding: 0.5em 1em
+            display: flex
+            flex-direction: column
+            align-items: center
+            border-radius: 5px
+            background-color: #b2b2b21c
+            cursor: pointer
+            transition-duration: 0.5s
+
+            &:hover
+                background: #f8fcff
+                box-shadow: 0px 40px 5em -25px black
+
+        svg
+            width: 60px
+            height: 60px
+            padding: 1em
+            border-radius: 10px
+
+        p
+            margin: 0px
+            padding: 0.5em
+            text-align: center
+            font-size: 14px
+
+    .headerCategoryTour
+        padding: 1em
+        display: flex
+        justify-content: space-evenly
+        align-items: center
+        font-family: 'Varela Round'
+        overflow: hidden
+
+        svg
+            width: 4em
+            height: 4em
+
+        .categoryTourProducts
+            @extend .categoryTourLoading
+            flex-direction: row !important
+            justify-content: space-evenly
+            flex-wrap: wrap
+            background-color: transparent !important
+            opacity: 0
+            transform: translateY(100px)
+            animation: categoryTourProductOpenning 0.5s forwards ease-out normal
+
+            .categoryTourProductComponent
+                width: 250px
+                height: 250px
+                margin: 1em
+                position: relative
+                border-radius: 1em
+                overflow: hidden
+                transition-duration: 0.3s
+
+                &:hover
+                    box-shadow: 0px 20px 40px -25px black
+                    
+                    .categoryTourProductInfo
+                        opacity: 1   
+
+                .categoryTourProductInfo
+                    width: 100%
+                    height: 100%
+                    display: flex
+                    flex-direction: column
+                    align-items: center
+                    justify-content: space-evenly
+                    position: absolute
+                    text-align: center
+                    color: white
+                    background: linear-gradient(180deg, #00000038, #000000d6)
+                    font-family: 'Varela Round'
+                    opacity: 0
+                    transition-duration: 0.5s
+
+                    button
+                        padding: 1em 2em
+                        border: none
+                        border-radius: 2em
+                        color: white
+                        background-color: #22a177
+                        font-family: 'Varela Round'
+                        cursor: pointer
+                        transition-duration: 0.3s
+
+                        &:hover
+                            box-shadow: 0px 0px 2px 2px white
+
+        .categoryTourProductsMessage
+            padding: 3em 5em
+            border-radius: 1em
+            color: #727272
+            background-color: #e3e3e3
+            text-align: center
+            font-size: 18px
+            opacity: 0
+            transform: translateY(100px)
+            animation: categoryTourProductOpenning 0.5s forwards ease-out normal
+
+.categoryTourLoading
+    width: 100%
+    padding: 1em
+    display: flex
+    flex-direction: column
+    align-items: center
+    border-radius: 1em
+    color: #727272
+    background-color: #e3e3e3
+
+    svg
+        margin-block: 3em
+        animation: categoryProductFetchLoading 1.5s infinite linear normal
+
+.categoryTourError
+        @extend .categoryTourLoading
+        opacity: 0
+        transform: scale(1.25)
+        animation: categoryTourErrorPopup 0.5s forwards ease-out normal
+        
+        svg
+            margin-block: 2em
+            animation: none
+
+.trendingNavigator
+    @extend .categoriesNavigator 
+    padding: 5em
+    background-color: white  
+
+    h1
+        margin-top: -10em
+
+    .trendingProductsContainer
+        width: max-content
+        height: 24em
+        margin-left: 40em
+        padding-block: 2em
+        display: flex
+        opacity: 0
+        transition-duration: 2s
+
+        .trendingProductComponent
+            width: 35em
+            height: 20em
+            margin-inline: 0.75em
+            padding: 1em
+            position: relative
+            display: flex
+            justify-content: space-between
+            border-radius: 0.5em
+            background-color: white
+            box-shadow: 0px 10px 60px -45px black
+
+            .trendingProductComponentInfo
+                width: 50%
+                padding: 2em
+                display: flex
+                flex-direction: column
+                justify-content: space-between
+                align-items: baseline
+                color: #5e5e5e
+                font-family: 'Varela Round'
+
+                h2
+                    margin-block: 0.5em
+
+                h5
+                    margin-block: 0em 1em
+
+                p
+                    font-size: 14px
+
+                button
+                    margin-top: 1em
+                    padding: 1em 4em
+                    border: none
+                    border-radius: 1em
+                    color: white
+                    background-color: #3b71b9
+                    box-shadow: 0px 15px 25px -10px #3b71b9
+                    font-family: 'Varela Round'
+                    cursor: pointer
+                    transition-duration: 0.3s
+
+                    &:hover
+                        box-shadow: 0px 15px 10px -5px #3b71b9
+                        transform: translateY(10px)
+
+            .trendingProductComponentImage
+                border-radius: 0.5em
+
+    .trendingProductsFetchError
+        width: 100%
+        display: flex
+        justify-content: center
+        align-items: center
+        border-radius: 0.5em
+        color: #727272
+        background-color: #e3e3e3
+        font-size: 24px
+        font-family: 'Varela Round'
+
+    .trendingProductsBrands
+        width: 100%
+        margin-block: 10em 8em
+        display: flex
+        justify-content: space-evenly
+
+        svg
+            width: 3em
+            height: 3em
+            color: grey
+            opacity: 0.5
+
+@keyframes categoryProductFetchLoading
+    0%
+        transform: rotateZ(0deg)
+
+    100%
+        transform: rotateZ(360deg)
+
+@keyframes categoryTourProductOpenning
+    0%
+        opacity: 0
+        transform: translateY(100px)
+
+    100%
+        opacity: 1
+        transform: translateY(0px)
+
+@keyframes categoryTourErrorPopup
+    0%
+        opacity: 0
+        transform: scale(1.25)
+
+    100%
+        opacity: 1
+        transform: scale(1)
+        
+
+
+

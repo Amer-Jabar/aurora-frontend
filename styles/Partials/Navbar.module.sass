@@ -1,0 +1,67 @@
+
+@media screen and ( min-width: 768px ) 
+    .navbar
+        width: 100% !important
+        margin: 0px !important
+        top: 0 !important
+        border-radius: 0em !important
+
+@media screen and (max-width: 768px)
+    .navbar
+        li
+            &:not(.brand)
+                font-size: 16px !important
+
+        .brand
+            font-size: 28px !important
+
+@media screen and (max-width: 600px)
+    .navbar
+        justify-content: center !important
+
+        li
+            &:not(.brand)
+                display: none
+
+
+
+.navbar
+    width: 100%
+    padding: 1.5em
+    background-color: #f6f6f6
+    display: flex
+    flex-direction: row
+    justify-content: space-around
+    align-items: center
+    position: fixed
+    transition-duration: 0.5s
+    z-index: 2
+
+    div
+        display: flex
+
+    li
+        margin-inline: 1.5em
+        font-family: 'Alegreya Sans', sans-serif
+        font-size: 20px
+        list-style: none
+        color: #313131
+        cursor: pointer
+        transition-duration: 0.3s
+
+        &:hover
+            opacity: 0.4 !important
+
+    .brand
+        font-size: 36px
+        font-family: 'Allura'
+
+.headerImageContainer
+    width: 20%
+    margin-block: 5%
+    transition-duration: 1s
+
+.headerImage
+    border-radius: 50px
+    cursor: pointer    
+

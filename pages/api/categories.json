@@ -1,0 +1,60 @@
+{
+    "hashtable": {
+        "Furniture": 0,
+        "Mattresses": 1,
+        "Kitchen": 2,
+        "Kids": 3,
+        "Bath": 4,
+        "Bedding": 5,
+        "Decor": 6,
+        "Rugs": 7,
+        "Lighting": 8
+    },
+    "categories": [
+        {
+            "title": "Furniture",
+            "image": "amazon-rivet-furniture-1533048038.jpg",
+            "description": "Lorem ipsum dolor sit, amet consectetur adipisicing elit."
+        },
+        {
+            "title": "Mattresses",
+            "image": "photo-1556438758-8d49568ce18e.webp",
+            "description": "Lorem ipsum dolor sit, amet consectetur adipisicing elit."
+        },
+        {
+            "title": "Kitchen",
+            "image": "photo-1556911220-bff31c812dba.webp",
+            "description": "Lorem ipsum dolor sit, amet consectetur adipisicing elit."
+        },
+        {
+            "title": "Kids",
+            "image": "photo-1543467214-b247439848dc.webp",
+            "description": "Lorem ipsum dolor sit, amet consectetur adipisicing elit."
+        },
+        {
+            "title": "Bath",
+            "image": "photo-1507652313519-d4e9174996dd.webp",
+            "description": "Lorem ipsum dolor sit, amet consectetur adipisicing elit."
+        },
+        {
+            "title": "Bedding",
+            "image": "photo-1505693416388-ac5ce068fe85.webp",
+            "description": "Lorem ipsum dolor sit, amet consectetur adipisicing elit."
+        },
+        {
+            "title": "Decor",
+            "image": "photo-1533090368676-1fd25485db88.webp",
+            "description": "Lorem ipsum dolor sit, amet consectetur adipisicing elit."
+        },
+        {
+            "title": "Rugs",
+            "image": "photo-1594040226829-7f251ab46d80.webp",
+            "description": "Lorem ipsum dolor sit, amet consectetur adipisicing elit."
+        },
+        {
+            "title": "Lighting",
+            "image": "photo-1544456731-e182851e1854.webp",
+            "description": "Lorem ipsum dolor sit, amet consectetur adipisicing elit."
+        }
+    ]
+}

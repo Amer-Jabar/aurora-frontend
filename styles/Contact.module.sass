@@ -1,0 +1,231 @@
+
+
+@media screen and ( max-width: 992px )
+    .contactBodyContainer
+        padding: 8em 3em 3em 3em !important
+
+@media screen and ( max-width: 768px )
+    .contactBodyContainer
+        flex-direction: column !important
+
+    .messageForm
+        width: 100% !important
+        padding: 3em 4em !important
+        border-radius: 1em 1em 0em 0em !important
+
+    .infoSection
+        width: 100% !important
+        border-top: solid #d8d8d8 2px !important
+        border-radius: 0em 0em 1em 1em !important
+
+        .infoSectionImage
+            display: none !important
+
+        .infoSectionDetails
+            padding: 2em 3em !important
+        
+            .locationDetails
+                text-align: center !important
+
+            .socialMediaIcons
+                margin-top: 8vh !important
+
+@media screen and ( max-width: 500px )
+    .contactBodyContainer
+        padding: 7em 1em 2em 1em !important
+
+        .messageForm
+            padding: 2.5em !important
+
+            h1
+                text-align: center !important
+
+@media screen and ( max-width: 400px )
+    .contactBodyContainer
+        .messageForm
+            padding: 1.5em !important
+
+            .messageFormHeader
+                h1
+                    font-size: 28px !important
+
+                p
+                    font-size: 14px !important
+                    margin-block: 1em 2em !important
+
+            .messageFormContainer
+                margin-top: 1em !important
+
+                label
+                    margin-top: 0.25em !important
+
+                input
+                    margin-block: 0.5em 1em !important
+
+                button
+                    margin: 0.5em 3em !important
+                    padding: 0.75em !important
+                    font-size: 12px !important
+
+        .infoSection
+            .infoSectionDetails
+                padding: 2em 1em !important
+
+                .locationDetails
+                    p
+                        font-size: 14px !important
+
+                .socialMediaIcons
+                    svg
+                        width: 3em !important
+                        height: 3em !important
+
+
+.contact
+    width: 100%
+    margin: 0px
+
+.contactBodyContainer
+    display: flex
+    padding: 8em 8em 3em 8em
+    background: #d0dbf7
+
+.messageForm
+    width: 50%
+    height: 100%
+    padding: 3em 4em
+    border-radius: 1em 0em 0em 1em
+    background: white
+
+    .messageFormHeader
+        h1
+            color: #8962bc
+            font-family: 'Varela Round'
+            font-size: 36px
+    
+        p
+            text-align: justify
+            color: #7981be
+
+    .messageFormContainer
+        width: 100%
+        margin-block: 2em
+        display: flex
+        flex-direction: column
+        border-radius: 0.5em
+
+        label
+            margin-top: 1em
+            color: #888ebe
+
+        *
+            font-size: 14px
+            font-family: 'Varela Round'        
+
+        .textInput
+            margin-block: 0.75em 1em
+            padding: 1em
+            border: none
+            border-radius: 5em
+            background: aliceblue
+
+        input
+            @extend .textInput
+
+        textarea
+            @extend .textInput
+            border-radius: 1em
+            resize: none
+
+        button
+            margin: 1em
+            padding: 1em
+            border: 1px solid #70a1e2
+            border-radius: 3em
+            color: white
+            background-color: #70a1e2
+            box-shadow: 0px 10px 15px -10px #4985d4
+            cursor: pointer
+            transition-duration: 0.3s
+
+            *
+                margin-inline: 0.25em
+                display: inline-block
+
+            &:focus
+                background-color: #8eb8f0
+
+            p
+                margin-block: 0.25em
+
+            svg
+                width: 1.75em
+                height: 1.75em
+                margin-bottom: -5px
+
+            .messageButtonLoading
+                animation: messageSendLoading 0.5s infinite ease-in-out normal
+
+.infoSection
+    width: 50%
+    position: relative
+    border-radius: 0em 1em 1em 0em
+    overflow: hidden
+
+    .infoSectionImage
+        width: 100%
+        height: 60%
+        position: relative
+
+    .infoSectionDetails
+        width: 100%
+        height: 40%
+        padding-inline: 2em
+        display: flex
+        flex-direction: column
+        align-items: stretch
+        background: white
+
+        .locationDetails
+            display: flex
+            flex-direction: column
+            align-items: stretch
+
+            section
+                *
+                    display: inline-block
+                    margin-inline: 0.5em
+                    margin-bottom: -0.25em
+                    color: #8085c4
+
+        .socialMediaIcons
+            width: 100%
+            display: flex
+            justify-content: space-evenly
+            margin-top: 10vh
+
+            svg
+                width: 4em
+                height: 4em
+
+                &:nth-of-type(1)
+                    color: #70a1e2
+
+                &:nth-of-type(2)
+                    color: #70d2e2
+                
+                &:nth-of-type(3)
+                    color: #dea6e8
+                
+
+
+
+
+
+@keyframes messageSendLoading
+    0%
+        transform: rotateZ(0deg)
+
+    100%
+        transform: rotateZ(360deg)
+        

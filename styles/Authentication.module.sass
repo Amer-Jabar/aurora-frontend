@@ -1,0 +1,225 @@
+@import './Home.module'
+
+@media screen and ( max-width: 1226px )
+    .formAd
+        background-size: cover !important
+
+@media screen and ( max-width: 992px )
+    .formContainer
+        padding: 8em 2em 2em 2em !important
+
+@media screen and ( max-width: 768px )
+    .formAd
+        display: none !important
+    
+    .form
+        width: 100% !important
+
+@media screen and ( max-width: 500px ) 
+    .formContainer
+        padding: 5em 0em 0em 0em !important
+
+        .formDivider
+            padding: 2.5em 0em !important
+            border-radius: 0em !important
+            background-color: white !important
+
+@media screen and ( max-width: 400px )
+    .formContainer
+        .formDivider
+            padding: 1.5em 0em !important
+    
+            .form
+                padding: 1vh 6vh !important
+    
+                h2
+                    font-size: 28px !important
+    
+                .formInputsContainer
+                    margin-block: 5vh 2vh !important
+    
+                    label
+                        font-size: 14px !important
+        
+                .formButtonGroup
+                    margin-block: 20px 15px !important
+        
+                .additionalAuthenticationButtonGroup
+                    margin-top: 0.5em !important
+
+
+.authenticationContainer
+    width: 100%
+    height: 100%
+    font-family: 'Alegreya Sans', sans-serif
+
+.formContainer
+    height: 100%
+    padding: 8em 8em 3em 8em
+    background-color: #d3e3e3
+
+.formDivider
+    height: 100%
+    display: flex
+    flex-direction: row
+    justify-content: space-evenly
+    border-radius: 2em
+    background-color: #f8fbfe
+
+.form
+    width: 50%
+    padding: 5vh 10vh
+    
+    .formHeaderContainer
+        display: flex
+        justify-content: space-between
+        align-items: center
+
+        svg
+            width: 35px
+            height: 35px
+            padding: 5px
+            color: #c27804
+            border-radius: 5px
+            background-color: #daeaea
+
+    *
+        font-family: 'Varela Round'
+
+    .formInputsContainer
+        margin-block: 7vh 3vh
+
+        div
+            margin-block: 3vh
+
+            input
+                margin-top: 10px
+
+    h2
+        font-size: 32px
+        font-weight: bolder
+        margin: 0px
+
+    input
+        display: block
+        width: 100%
+        padding: 1.5vh
+        padding-left: 2vh
+        border: none
+        border-radius: 2em
+        background-color: #f8fbfe
+        font-size: 14px
+        box-shadow: 0px 0px 4px -2px black
+        transition-duration: 0.5s
+
+        &:focus
+            background-color: rgba(0, 0, 0, 0.1)
+
+    label
+        display: block
+        font-size: 16px
+        color: #525252
+
+    a
+        display: block
+        text-align: center
+        color: #545454
+        font-size: 14px
+
+.formButtonGroup
+    margin-block: 30px 15px
+    display: flex
+    flex-direction: column
+    justify-content: space-evenly
+
+    button
+        width: 100%
+        border: none
+        border-radius: 25px
+        padding: 1.25vh
+        font-size: 18px
+        font-family: 'Alegreya Sans', sans-serif
+        margin-block: 5px
+        cursor: pointer
+
+        &:nth-of-type(1)
+            background-color: #ce965b
+            color: white
+
+        &:nth-of-type(2)
+            color: #ce965b
+            background-color: #fafafa
+            box-shadow: 0px 0px 10px -5px black
+
+
+.additionalAuthenticationButtonGroup
+    margin-top: 20px
+    padding: 2vh
+    display: flex
+    flex-direction: row
+    justify-content: space-evenly
+    align-items: center
+
+    svg
+        width: 7vh
+        height: 7vh
+        box-shadow: 0px 0px 3px -1px #d37701
+        border-radius: 3em
+        padding: 10px
+
+.formAd
+    width: 50%
+    border-radius: 0em 2em 2em 0em
+    background-image: url('/Auth/5d57786224468ed1c44bb8b666087ad2.jpg')
+    background-size: contain
+    background-position: inherit
+    background-repeat: round
+
+
+.authenticationErrorContainer
+    position: absolute
+    width: 100%
+    height: 100%
+    display: flex
+    flex-direction: column
+    justify-content: center
+    align-items: center
+    background-color: rgb(0, 0, 0, 0.5)
+    animation: errorMessage 0.25s ease-in forwards
+
+    button
+        padding: 1vh 6vh
+        font-size: 20px
+        font-family: 'Alegreya Sans', sans-serif
+    
+    p
+        font-size: 24px
+        color: rgb(241, 241, 241)
+        background-color: #d84e4e
+        padding: 2vh 3vh
+        border-radius: 1vh
+        animation: errorMessageText 0.5s linear normal forwards
+
+    
+@keyframes errorMessage
+    0%
+        opacity: 0
+    100%
+        opacity: 1
+
+
+@keyframes errorMessageText
+    0%
+        margin-left: -15vh
+    25%
+        margin-left: 12vh
+    50%
+        margin-left: -8vh
+    75%
+        margin-left: 6vh
+    100%
+        margin-left: 0vh
+
+
+
+    
