@@ -1,4 +1,4 @@
-const elementScrollEvent = (elementId, error) => {
+const elementScrollEvent = (elementId, error, rightLimit) => {
 
     if ( error )
         return;

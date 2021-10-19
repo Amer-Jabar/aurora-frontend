@@ -8,6 +8,21 @@ import elementDragEvent from '../../helper/home/trendingNavigator/elementDragEve
 import style from '../../styles/Categories.module.sass';
 
 
+export const getContainerWidth = (elementId) => {
+    const elementChildren = document.querySelector(`#${elementId}`).childNodes;
+    const childWidth = elementChildren[0].clientWidth;
+    return childWidth * (elementChildren.length - 2);
+}
+
+export const getDragLimits = (elementId) => {
+    const elementChildren = document.querySelector(`#${elementId}`).childNodes;
+    const childWidth = elementChildren[elementChildren.length - 1].clientWidth;
+    return {
+        minMargin: -1 * (childWidth * (elementChildren.length - 2) + childWidth / 2),
+        maxMargin: 10,
+    };
+}
+
 export const categoryColors = [
     'linear-gradient(45deg, #9d658c, #7F3F6B)',
     'linear-gradient(45deg, #C7E923, #aecf0e)',
@@ -23,8 +38,10 @@ export const categoryColors = [
 const CategoryBar = ({ selectedCategory, setSelectedCategory, setSortedBy, setCategoryData, setError }) => {
 
     useEffect(() => {
-        elementScrollEvent('categorySelectorContainer');
-        elementDragEvent('categorySelectorContainer', false, -1110, 10);
+        const overallWidth = getContainerWidth('categorySelectorContainer');
+        const { minMargin, maxMargin } = getDragLimits('categorySelectorContainer');
+        elementScrollEvent('categorySelectorContainer', false, overallWidth);
+        elementDragEvent('categorySelectorContainer', false, minMargin, maxMargin);
     }, []);
 
     return (

@@ -12,6 +12,8 @@ const elementDragEvent = (elementId, error, minMargin, maxMargin) => {
     trendingProductContainer.ontouchstart = (e) => {
         const { clientX } = e.touches[0];
         startPosition = clientX;
+
+        console.log({ minMargin, maxMargin });
     }
 
     trendingProductContainer.ontouchmove = (e) => {
@@ -41,7 +43,7 @@ const elementDragEvent = (elementId, error, minMargin, maxMargin) => {
 
 const setAnimation = (condition, element, shiftValue) => {
     if ( condition )
-        element.style.marginLeft = `${shiftValue}px`;
+        element.style.setProperty('margin-left', `${shiftValue}px`, 'important');
 
     requestAnimationFrame(() => setAnimation(true, element, shiftValue));    
 }

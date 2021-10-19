@@ -54,7 +54,11 @@ const Header = () => {
             <section>
                 <h1>Top Trending Brands Available Today At Our Shops.</h1>
                 <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
-                <button>Categories</button>
+                <Link href={`/Pages/Categories`}>
+                    <a>
+                        Categories
+                    </a>
+                </Link>
             </section>
             <section className={style.headerImage}></section>
             <section id='headerTrendingProducts'>

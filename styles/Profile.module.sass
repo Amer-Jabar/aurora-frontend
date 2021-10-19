@@ -280,6 +280,13 @@
             ul
                 padding-inline: 0em !important
 
+                li
+                    margin: 0em 0.5em !important
+                    padding: 7px 8px 3px 7px !important
+
+                    &:first-of-type 
+                        padding: 5px !important
+
     .profileForm
         padding: 2em !important
         box-shadow: 0px 2px 20px -10px black !important
@@ -300,6 +307,7 @@
             &:nth-of-type(2)
                 .profileAnalyticsForecastSelector
                     label
+                        padding: 0.5em !important
                         font-size: 12px !important
 
                 .profileAnalyticsForecastSuggester
@@ -321,6 +329,111 @@
         a
             margin-inline: 0em !important
             font-size: 12px !important
+
+@media screen and ( max-width: 400px )
+    .profileActivityComponent
+        section
+            &:nth-of-type(1)
+                margin-top: 10px !important
+                padding-top: 0em !important
+
+                .profileActivityBox
+                    margin-bottom: 0.5em !important
+                    padding: 0.75em !important
+
+                    div
+                        &:nth-of-type(1)
+                            margin-bottom: 0.5em !important
+
+                        svg
+                            width: 2em !important
+                            height: 2em !important
+
+            &:nth-of-type(2)
+                margin-block: 0.5em !important
+
+                h2
+                    font-size: 20px !important
+
+            &:nth-of-type(3)
+                .profileActivityActivitiesList
+                    padding-inline: 0.5em !important
+
+                    .activityElement
+                        margin-block: 10px !important
+                        padding: 10px !important
+
+                        label
+                            font-size: 12px !important
+
+    .profileAnalyticsComponentContainer
+        section
+            &:nth-of-type(1)
+                .pieChartDescriptionContainer
+                    width: 25% !important
+                  
+                    div
+                        h2
+                            display: none !important
+
+                        span
+                            display: none !important
+
+                .pieChartContainer
+                    width: 75% !important
+
+            &:nth-of-type(2)
+                .profileAnalyticsForecastSelector
+                    label
+                        font-size: 11px !important
+    
+    .purchasesContainer
+        h1
+            font-size: 20px !important
+
+        .userPurchaseCardContainer
+            justify-content: space-evenly !important
+
+            .purchaseCardDividor                        
+                &:nth-of-type(1)
+                    width: 75px !important
+                    height: 75px !important
+                    margin-inline: 0em !important
+
+                    div
+                        &:nth-of-type(1)
+                            width: 100% !important
+                            height: 100% !important
+                            margin: 0px !important
+
+                &:nth-of-type(2)
+                    .purchaseInfoValue
+                        font-size: 12px !important
+
+                &:nth-of-type(3)
+                    a
+                        font-size: 11px !important
+                    
+    .profileSettingsContainer
+        padding: 1em !important
+
+        .profileImageConfig
+            margin-left: 0em !important
+            
+            button
+                width: 100% !important
+                padding: 0.5em 2em !important
+                margin-block: 0.25em !important
+
+        hr
+            margin-block: 2em 1em !important
+
+        h2
+            font-size: 14px !important
+
+        button
+            margin-top: 0em !important
+            font-size: 14px !important
 
 
 .profileContainer
@@ -964,6 +1077,7 @@
     justify-content: flex-start
     border-radius: 1em
     background: #8ca7d473
+    overflow: scroll
 
     section
         &:nth-of-type(1)

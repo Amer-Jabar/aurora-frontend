@@ -12,8 +12,9 @@ import {
 
 import fetchCategoryTourProducts from '../../helper/home/categoriesNavigator/fetchCategoryTourProducts';
 import elementScrollEvent from '../../helper/home/trendingNavigator/elementScrollEvent';
+import elementDragEvent from '../../helper/home/trendingNavigator/elementDragEvent';
 import observeIntersection from '../../helper/home/trendingNavigator/observeIntersection';
-import getComponentTranslate from '../../helper/home/trendingNavigator/getComponentTranslate';
+import { getContainerWidth, getDragLimits } from '../Categories/CategoryBar';
 
 import style from '../../styles/Home.module.sass';
 
@@ -54,7 +55,10 @@ const TrendingNavigator = () => {
             <div className={style.trendingProductsContainer} id='trendingProductsContainer'
             onLoad={() => {
                 componentIO.current = observeIntersection();
-                elementScrollEvent('trendingProductsContainer', tempErrRef.current);
+                const overallWidth = getContainerWidth('trendingProductsContainer');
+                const { minMargin, maxMargin } = getDragLimits('trendingProductsContainer');
+                elementScrollEvent('trendingProductsContainer', tempErrRef.current, overallWidth);
+                elementDragEvent('trendingProductsContainer', false, minMargin, maxMargin);
             }}>
                 {
                     trendingProducts

@@ -47,7 +47,7 @@ const Profile = ({ props: staticProps }) => {
     return (
         <div style={{ height: '100%' }}>
             <Head>
-                <title>Lohim/Signup</title>
+                <title>User Profile</title>
                 <meta 
                 name='description' 
                 content='Users profile page.'

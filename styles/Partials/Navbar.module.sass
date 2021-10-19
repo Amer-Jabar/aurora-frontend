@@ -19,9 +19,40 @@
     .navbar
         justify-content: center !important
 
+        .userAuthenticationContainer
+            display: none !important
+
         li
             &:not(.brand)
                 display: none
+
+        div
+            &:nth-of-type(1)
+                margin-left: auto !important
+
+            &:nth-of-type(4)
+                width: 2em
+                height: 2em
+                margin-left: auto
+                display: flex
+                flex-direction: column
+                align-items: center
+                justify-content: space-evenly
+                position: relative
+                cursor: pointer
+
+                span
+                    width: 100% 
+                    height: 3px 
+                    border-radius: 1em 
+                    background: #d6d6d6 
+                    transition-duration: 0.3s 
+
+                    &:nth-of-type(1)
+                        transform-origin: left
+
+                    &:nth-of-type(3)
+                        transform-origin: right
 
 
 
@@ -38,7 +69,8 @@
     z-index: 2
 
     div
-        display: flex
+        &:not(.hamburger)
+            display: flex
 
     li
         margin-inline: 1.5em
@@ -63,5 +95,27 @@
 
 .headerImage
     border-radius: 50px
-    cursor: pointer    
+    cursor: pointer
+
+.hamburger
+    display: none
+
+.mobileResponsiveSection
+    width: 100%
+    height: 0%
+    position: fixed
+    color: #868686
+    background: #f6f6f6
+    text-align: center
+    font-weight: 400
+    overflow: hidden
+    transition-duration: 0.5s
+    z-index: 2
+
+    li
+        margin-block: 1.75em
+        list-style: none
+        cursor: pointer
+
+
 

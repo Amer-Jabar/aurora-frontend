@@ -54,6 +54,27 @@
                     width: 80% !important
                     left: 10% !important
 
+    .productAddFormContainer
+        padding: 2e !important
+
+        .productAddFormHeader
+            h2
+                font-size: 20px !important
+
+            svg
+                width: 2em !important
+                height: 2em !important
+
+        .productAddFormBody
+            input
+                margin-block: 0.5em 1.5em !important
+                padding: 0.5em 1em !important
+
+                button
+                    padding: 0.5em !important
+                    border-radius: 5em !important
+                    font-size: 12px !important
+
 @media screen and ( max-width: 600px ) 
     .categoryBar
         margin-top: 5em !important
@@ -131,11 +152,9 @@
                 &:nth-of-type(4)
                     bottom: 150px !important
 
-// @media screen and ( max-width: 400px )
-
-
 .categoriesContainer
     display: flex
+    overflow: hidden
     flex-direction: column
     font-family: 'Varela Round'
 
@@ -198,10 +217,11 @@
     width: 100%
     margin-inline: auto
     padding: 1em
+    border-bottom: 1px solid #e3e3e3
     display: flex
     justify-content: space-evenly
     align-items: center
-    border-bottom: 1px solid #e3e3e3
+    overflow: scroll
 
     span
         padding: 0.5em 1em
