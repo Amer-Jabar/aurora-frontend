@@ -145,7 +145,7 @@
             flex-direction: column !important
             justify-content: normal !important
             align-items: center !important
-            overflow-y: scroll !important
+            overflow-y: auto !important
 
             .profileInfoComponentHeader
                 width: 100% !important
@@ -329,6 +329,12 @@
         a
             margin-inline: 0em !important
             font-size: 12px !important
+
+        .purchaseFetchError
+            font-size: 14px !important
+
+        .emptyPurchaseContainer
+            font-size: 14px !important
 
 @media screen and ( max-width: 400px )
     .profileActivityComponent
@@ -543,6 +549,7 @@
     label
         font-size: 28px
         font-weight: bold
+        line-height: 1.5
 
         span
             background-color: #6493c4
@@ -852,7 +859,7 @@
             border-bottom-left-radius: 1em
             border-bottom-right-radius: 0em
             box-shadow: 0px 2px 15px -10px black
-            overflow-y: scroll
+            overflow-y: auto
             scrollbar-width: thin
             scrollbar-color: #67aed3 #e9eef7
             animation: profileActivitySectionOpenning 1s ease-in normal forwards
@@ -1010,7 +1017,7 @@
         height: 100%
         display: flex
         flex-direction: column
-        overflow-y: scroll
+        overflow-y: auto
 
         .userPurchaseCardContainer
             padding: 0.5em
@@ -1067,6 +1074,24 @@
                 font-family: 'Varela Round'
                 font-size: 14px
 
+    .purchaseFetchError
+            width: 80%
+            margin: 2em auto
+            padding: 2em
+            border-radius: 0.5em
+            background: #fac3c3
+            text-align: center
+
+    .emptyPurchaseContainer
+            width: 80%
+            margin: 3em auto
+            padding: 2em
+            border: solid 2px #96abd6
+            border-radius: 0.25em
+            background: #cad5f2
+            box-shadow: 0px 0px 10px -5px black
+            text-align: center
+
 .profileSettingsContainer
     width: 80%
     height: 100%
@@ -1077,7 +1102,7 @@
     justify-content: flex-start
     border-radius: 1em
     background: #8ca7d473
-    overflow: scroll
+    overflow-y: auto
 
     section
         &:nth-of-type(1)

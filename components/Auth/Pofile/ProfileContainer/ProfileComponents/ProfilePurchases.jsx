@@ -52,6 +52,9 @@ const ProfilePurchases = () => {
     const { userInfo } = useSelector(state => state.User);
     const { pending, error, data } = useLoad(loadUserPurchases, userInfo?._id)
 
+    useEffect(() => {}, [pending, error, data]);
+    console.log({ pending, error, data });
+
     return (
         <div className={style.purchasesContainer}>
             <h1>User Purchases</h1>
@@ -63,13 +66,13 @@ const ProfilePurchases = () => {
                 }
                 {
                     error
-                    ? <div>Error</div>
+                    ? <div className={style.purchaseFetchError}>An error occured during data fetch.</div>
                     : <></>
                 }
                 {
-                    data
+                    data && data.length > 0 && !pending
                     ? <PurchaseList userPurchases={data} />
-                    : <></>
+                    : <div className={style.emptyPurchaseContainer}>No purchases have been done yet.</div>
                 }
             </section>
         </div>
