@@ -17,7 +17,7 @@ const PurchaseList = ({ userPurchases }) => {
                     <div className={style.purchaseCardDividor}>
                         <Image
                         alt='product image'
-                        src={`http://localhost:4445/api/products/${purchase._id}/image`}
+                        src={`http://localhost:4445/api/products/${purchase?.product?._id}/image`}
                         width={150}
                         height={135}
                         layout='fixed'

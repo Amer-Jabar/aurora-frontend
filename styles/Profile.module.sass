@@ -1100,6 +1100,7 @@
     display: flex
     flex-direction: column
     justify-content: flex-start
+    position: inherit
     border-radius: 1em
     background: #8ca7d473
     overflow-y: auto
@@ -1186,23 +1187,26 @@
                     background-color: #bc5959
 
     .profileImageViewer
-        width: 50%
+        width: inherit
         height: auto
         margin: auto
         position: absolute
         z-index: 2
 
         svg
-            width: 2.5em
-            height: 2.5em
+            width: 3.5em
+            height: 3.5em
             margin-bottom: 0.5em
+            padding: 0.5em
+            position: absolute
+            right: 0px
             float: right
+            border-radius: 0.5em 0em 0.5em 0.5em
             color: #eeeeee
+            background: #00000057
             cursor: pointer
+            z-index: 2
             transition-duration: 0.3s
-
-            &:hover
-                transform: scale(1.2)
 
         img
             width: 100%

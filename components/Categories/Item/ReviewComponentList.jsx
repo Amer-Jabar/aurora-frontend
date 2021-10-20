@@ -12,6 +12,8 @@ import style from '../../../styles/Categories.module.sass';
 
 const ReviewComponentList = ({ reviews }) => {
 
+    console.log(reviews);
+
     return (
         <Fragment>
             {
@@ -27,9 +29,9 @@ const ReviewComponentList = ({ reviews }) => {
                                             <Fragment>
                                                 <div className={style.reviewElementImage}>
                                                     <Image
-                                                    alt='profile picture of review component'
+                                                    alt='profile picture for review component'
                                                     src={
-                                                        review?.owner?.Image
+                                                        review?.owner?.image
                                                         ? `http://localhost:4445/api/users/${review?.owner?._id}/image`
                                                         : blankProfileImage
                                                     }
