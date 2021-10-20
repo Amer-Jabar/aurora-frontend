@@ -20,7 +20,7 @@ const Logout = async (token, dispatcher) => {
         dispatcher(removeUser({ innerData: null }));
 }
 
-export const Links = ({ profilePath, pageLoadingContext, loggedIn, userInfo, isInHamburger, pcScreen }) => (
+export const Links = ({ profilePath, pageLoadingContext, loggedIn, userInfo, token, dispatcher, isInHamburger, pcScreen }) => (
     <Fragment>
         <div>
             <Link href='/Home' passHref>
@@ -119,6 +119,8 @@ const Navbar = () => {
                 pageLoadingContext={pageLoadingContext}
                 userInfo={userInfo}
                 isInHamburger={false}
+                token={token}
+                dispatcher={dispatcher}
                 pcScreen={screenSize > 600}
                 ></Links>
                 <Hamburger
@@ -131,6 +133,8 @@ const Navbar = () => {
             profilePath={profilePath}
             loggedIn={loggedIn}
             userInfo={userInfo}
+            token={token}
+            dispatcher={dispatcher}
             pageLoadingContext={pageLoadingContext}
             ></ResponsiveSection>
         </div>

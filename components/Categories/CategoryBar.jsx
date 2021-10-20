@@ -18,7 +18,7 @@ export const getDragLimits = (elementId) => {
     const elementChildren = document.querySelector(`#${elementId}`).childNodes;
     const childWidth = elementChildren[elementChildren.length - 1].clientWidth;
     return {
-        minMargin: -1 * (childWidth * (elementChildren.length - 2) + childWidth / 2),
+        minMargin: -1 * (childWidth * (elementChildren.length - 2) + childWidth),
         maxMargin: 10,
     };
 }

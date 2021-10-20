@@ -19,7 +19,7 @@ const elementDragEvent = (elementId, error, minMargin, maxMargin) => {
     trendingProductContainer.ontouchmove = (e) => {
 
         const { clientX: currentPosition } = e.touches[0];
-        const shiftValue = prevMargin + currentPosition / 15 - startPosition / 15;
+        const shiftValue = prevMargin + currentPosition / 20 - startPosition / 20;
 
         if ( prevMargin > maxMargin && shiftValue > maxMargin || prevMargin < minMargin && shiftValue < minMargin )
             return;

@@ -5,7 +5,7 @@ import { extractColorFromString } from '../../helper/category/categoryView/style
 import style from '../../styles/Categories.module.sass';
 
 
-const filters = ['like', 'price', 'entity', 'view', 'review', 'default'];
+const filters = ['default', 'review', 'view', 'price', 'entity', 'like'];
 
 const CategoryFilters = ({ categoryIndex, setCategoryData, setError, sortedBy, setSortedBy }) => {
     return (
@@ -17,8 +17,14 @@ const CategoryFilters = ({ categoryIndex, setCategoryData, setError, sortedBy, s
                     <span key={index}
                     style={
                         sortedBy === filter
-                        ? { color: 'white', background: categoryColors[categoryIndex] }
-                        : { color: extractColorFromString(categoryColors[categoryIndex]), background: 'white' }
+                        ? { 
+                            color: 'white', background: categoryColors[categoryIndex], 
+                            marginLeft: `${ index === 0 ? '4em' : 'none' }` 
+                        }
+                        : { 
+                            color: extractColorFromString(categoryColors[categoryIndex]), background: 'white', 
+                            marginLeft: `${ index === 0 ? '4em' : 'none' }` 
+                        }
                     }
                     onClick={() => {
                         if ( sortedBy === filter )

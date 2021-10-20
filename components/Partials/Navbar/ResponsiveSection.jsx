@@ -9,7 +9,7 @@ const setSectionStyle = (hamburgerIsOpen, { current: sectionRef }) => {
 
     if ( hamburgerIsOpen ) {
         setPrefMargin({ current: sectionRef });
-        sectionRef.style.height = '50%';
+        sectionRef.style.height = '55%';
         sectionRef.style.padding = '1em';
     } else {
         sectionRef.style.height = '0em';
@@ -22,7 +22,7 @@ const setPrefMargin = ({ current: sectionRef }) => {
     sectionRef.style.marginTop = `${prefMargin}px`;
 };
 
-const ResponsiveSection = ({ hamburgerIsOpen, profilePath, loggedIn, userInfo, pageLoadingContext }) => {
+const ResponsiveSection = ({ hamburgerIsOpen, profilePath, loggedIn, userInfo, token, dispatcher, pageLoadingContext }) => {
     
     const sectionRef = useRef();
     useEffect(() => setSectionStyle(hamburgerIsOpen, sectionRef));
@@ -35,6 +35,8 @@ const ResponsiveSection = ({ hamburgerIsOpen, profilePath, loggedIn, userInfo, p
             loggedIn={loggedIn}
             pageLoadingContext={pageLoadingContext}
             userInfo={userInfo}
+            token={token}
+            dispatcher={dispatcher}
             isInHamburger={true}
             ></Links>
         </div>
