@@ -254,7 +254,6 @@
             font-size: 24px !important
 
         .trendingProductsContainer
-            height: 22em !important
             margin-left: 15em !important
 
             .trendingProductComponent
@@ -411,6 +410,7 @@
 
     h1
         margin-block: 0.5em
+        padding-left: 1em
         color: #093a76
         font-family: 'Varela Round'
 
@@ -551,7 +551,7 @@
 
 .trendingNavigator
     @extend .categoriesNavigator 
-    padding: 5em
+    padding: 3em
     background-color: white  
 
     h1
@@ -559,7 +559,8 @@
 
     .trendingProductsContainer
         width: max-content
-        height: 24em
+        height: max-content
+        margin-bottom: 4em
         margin-left: 40em
         padding-block: 2em
         display: flex
@@ -569,14 +570,14 @@
         .trendingProductComponent
             width: 35em
             height: 20em
-            margin-inline: 0.75em
+            margin-inline: 1em
             padding: 1em
             position: relative
             display: flex
             justify-content: space-between
             border-radius: 0.5em
             background-color: white
-            box-shadow: 0px 10px 60px -45px black
+            box-shadow: 0px 10px 25px -20px black
 
             .trendingProductComponentInfo
                 width: 50%
@@ -610,8 +611,8 @@
                     transition-duration: 0.3s
 
                     &:hover
-                        box-shadow: 0px 15px 10px -5px #3b71b9
-                        transform: translateY(10px)
+                        box-shadow: 0px 10px 10px -5px #3b71b9
+                        transform: translateY(3px)
 
             .trendingProductComponentImage
                 border-radius: 0.5em

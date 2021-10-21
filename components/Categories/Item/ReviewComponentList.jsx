@@ -12,8 +12,6 @@ import style from '../../../styles/Categories.module.sass';
 
 const ReviewComponentList = ({ reviews }) => {
 
-    console.log(reviews);
-
     return (
         <Fragment>
             {

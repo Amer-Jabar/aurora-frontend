@@ -11,10 +11,7 @@ import {
 } from 'react-icons/si';
 
 import fetchCategoryTourProducts from '../../helper/home/categoriesNavigator/fetchCategoryTourProducts';
-import elementScrollEvent from '../../helper/home/trendingNavigator/elementScrollEvent';
-import elementDragEvent from '../../helper/home/trendingNavigator/elementDragEvent';
 import observeIntersection from '../../helper/home/trendingNavigator/observeIntersection';
-import { getContainerWidth, getDragLimits } from '../Categories/CategoryBar';
 
 import style from '../../styles/Home.module.sass';
 
@@ -53,34 +50,30 @@ const TrendingNavigator = () => {
         <div className={style.trendingNavigator}>
             <h1>Trending Products</h1>
             <div className={style.trendingProductsContainer} id='trendingProductsContainer'
-            onLoad={() => {
-                componentIO.current = observeIntersection();
-                const overallWidth = getContainerWidth('trendingProductsContainer');
-                const { minMargin, maxMargin } = getDragLimits('trendingProductsContainer');
-                elementScrollEvent('trendingProductsContainer', tempErrRef.current, overallWidth);
-                elementDragEvent('trendingProductsContainer', false, minMargin, maxMargin);
-            }}>
+            onLoad={() => componentIO.current = observeIntersection()}>
                 {
                     trendingProducts
                     ? (
                         trendingProducts.map(({ _id, name, category, price }, index) => (
-                            <div 
-                            className={style.trendingProductComponent}
-                            key={index}>
-                                <div className={style.trendingProductComponentInfo}>
-                                    <h2>{ name }</h2>
-                                    <h5>Category: { category }</h5>
-                                    <p>Price: ${ price }.00</p>
-                                    <button>Shop</button>
+                            <div style={{ height: 'max-content', display: 'block' }} key={index}>
+                                <div 
+                                className={style.trendingProductComponent}
+                                key={index}>
+                                    <div className={style.trendingProductComponentInfo}>
+                                        <h2>{ name }</h2>
+                                        <h5>Category: { category }</h5>
+                                        <p>Price: ${ price }.00</p>
+                                        <button>Shop</button>
+                                    </div>
+                                    <Image
+                                    className={style.trendingProductComponentImage}
+                                    src={`http://localhost:4445/api/products/${_id}/image`}
+                                    height='288'
+                                    width='288'
+                                    alt='trending product'
+                                    quality={10}
+                                    />
                                 </div>
-                                <Image
-                                className={style.trendingProductComponentImage}
-                                src={`http://localhost:4445/api/products/${_id}/image`}
-                                height='288'
-                                width='288'
-                                alt='trending product'
-                                quality={10}
-                                />
                             </div>
                         ))
                     )

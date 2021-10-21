@@ -40,6 +40,8 @@ const ActivityDescription = (activityData, userId, key) => {
 
     let RenderedComponent = null;
 
+    console.log({ activityData });
+
     switch ( activityName ) {
         //Transaction Activity
         case activityPropsTable[0]:
@@ -48,8 +50,8 @@ const ActivityDescription = (activityData, userId, key) => {
                     <div><BiCreditCardAlt style={{ backgroundColor: 'rgb(30, 144, 255)' }} /></div>
                     <label>You did a transaction with { 
                             seller?._id === userId 
-                            ? buyer.username 
-                            : seller.username 
+                            ? buyer?.username 
+                            : seller?.username 
                         } - { date }
                     </label>
                 </div>

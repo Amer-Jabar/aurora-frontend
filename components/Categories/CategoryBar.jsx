@@ -1,27 +1,9 @@
 import Image from 'next/image';
-import { useEffect } from 'react';
 
 import categoriesLib from '../../pages/api/categories.json'
-import elementScrollEvent from '../../helper/home/trendingNavigator/elementScrollEvent';
-import elementDragEvent from '../../helper/home/trendingNavigator/elementDragEvent';
 
 import style from '../../styles/Categories.module.sass';
 
-
-export const getContainerWidth = (elementId) => {
-    const elementChildren = document.querySelector(`#${elementId}`).childNodes;
-    const childWidth = elementChildren[0].clientWidth;
-    return childWidth * (elementChildren.length - 2);
-}
-
-export const getDragLimits = (elementId) => {
-    const elementChildren = document.querySelector(`#${elementId}`).childNodes;
-    const childWidth = elementChildren[elementChildren.length - 1].clientWidth;
-    return {
-        minMargin: -1 * (childWidth * (elementChildren.length - 2) + childWidth),
-        maxMargin: 10,
-    };
-}
 
 export const categoryColors = [
     'linear-gradient(45deg, #9d658c, #7F3F6B)',
@@ -35,19 +17,11 @@ export const categoryColors = [
     'linear-gradient(45deg, #ae4a2b, #862609)'
 ]
 
-const CategoryBar = ({ selectedCategory, setSelectedCategory, setSortedBy, setCategoryData, setError }) => {
-
-    useEffect(() => {
-        const overallWidth = getContainerWidth('categorySelectorContainer');
-        const { minMargin, maxMargin } = getDragLimits('categorySelectorContainer');
-        elementScrollEvent('categorySelectorContainer', false, overallWidth);
-        elementDragEvent('categorySelectorContainer', false, minMargin, maxMargin);
-    }, []);
-
-    return (
-        <div className={style.categoryBar}>
-            <h2>Categories</h2>
-            <div 
+const CategoryBar = ({ selectedCategory, setSelectedCategory, setSortedBy, setCategoryData, setError }) => (
+    <div className={style.categoryBar}>
+        <h2>Categories</h2>
+        <div className={style.categorySelectorContainerScroller}>
+            <div
             className={style.categorySelectorContainer} 
             id='categorySelectorContainer'>
                 <div 
@@ -56,7 +30,7 @@ const CategoryBar = ({ selectedCategory, setSelectedCategory, setSortedBy, setCa
                 />
                 {
                     categoriesLib.categories.map(({ title: categoryTitle, image }, index) => (
-                        <div 
+                        <div
                         className={style.categoryCard} 
                         key={index}
                         onClick={() => {
@@ -80,10 +54,9 @@ const CategoryBar = ({ selectedCategory, setSelectedCategory, setSortedBy, setCa
                         </div>
                     ))
                 }
-            </div>
+            </div>                
         </div>
-    )
-}
-
+    </div>
+)
 
 export default CategoryBar;

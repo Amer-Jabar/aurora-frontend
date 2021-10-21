@@ -99,16 +99,43 @@
 
     .categoryView
         margin: 1em ​auto !important
-        padding: 0em 2em
+        padding: 0em 2em 0em !important
+
+        .categoryProductListContainer
+            padding-inline: 0em !important
 
         .productAddFormButton
-            margin: 1em auto
+            margin: 1em auto !important
+
             p
                 font-size: 12px !important
 
         .categorySelectionMessage
             padding-block: 2em !important
             font-size: 16px !important
+
+        .categoryProductComponent
+            width: 150px !important
+            margin-inline: 0.5em !important
+
+            div
+                &:nth-of-type(1)
+                    width: 150px !important
+                    height: 100px !important
+
+            .productComponentBody
+                padding-inline: 1em !important
+
+                label
+                    padding-inline: 1em !important
+                    font-size: 12px !important
+
+                h3
+                    font-size: 14px !important
+
+                a
+                    margin: 0.5em 0em 0.5em 0em !important
+                    font-size: 12px !important
 
     .itemContainer
         main
@@ -166,7 +193,33 @@
                 div
                     &:nth-of-type(1)
                         padding: 0em 0.25em !important
+
+    .categoryFilters
+        justify-content: flex-start !important
+
+    .categoryView
+        padding: 0em 1em 0em !important
+
+        .categoryProductComponent
+            width: 125px !important
+
+            div
+                &:nth-of-type(1)
+                    width: 125px !important
+                    height: 75px !important
+
+            .productComponentBody
+                padding-inline: 0.5em !important
                 
+                label
+                    margin-top: -20px !important
+                    font-size: 11px !important
+
+                h6
+                    font-size: 11px !important
+
+                a
+                    margin: 0.5em !important
 
 
 .categoriesContainer
@@ -194,7 +247,16 @@
         color: #4d4d4d
         font-size: 32px
         font-family: 'Varela Round'
-    
+
+    .categorySelectorContainerScroller
+        width: 100%
+        overflow-x: scroll
+        scrollbar-color: #e1e1e1 white
+        scrollbar-width: thin
+        
+        &::-webkit-scrollbar
+            display: none
+
     .categorySelectorContainer
         width: max-content
         padding-block: 1em
@@ -212,7 +274,7 @@
             padding: 0.25em
             margin-inline: 1em
             border-radius: 0.5em
-            box-shadow: 0px 20px 35px -25px black
+            box-shadow: 0px 10px 30px -25px black
             cursor: pointer
 
             img
@@ -295,13 +357,13 @@
         font-size: 18px
         font-family: 'Varela Round'
 
-    .catgoryProductListContainer
+    .categoryProductListContainer
         padding: 1em
         display: flex
         justify-content: space-evenly
         flex-wrap: wrap
 
-        .catgoryProductComponent
+        .categoryProductComponent
             width: 225px
             height: max-content
             margin: 100px 1em 1.5em 1em

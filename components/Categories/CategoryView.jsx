@@ -43,7 +43,7 @@ const CategoryView = ({ selectedCategory, categoryData, loading, error, setProdu
             {
                 categoryData && categoryData.length > 0
                 ? (
-                    <div className={style.catgoryProductListContainer}>
+                    <div className={style.categoryProductListContainer}>
                         {
                             categoryData.map((product, index) => {
                                 const likeRef = userLikesProduct(userData && userData?.likes, product);

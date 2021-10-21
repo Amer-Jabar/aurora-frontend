@@ -71,7 +71,7 @@ const ProductCard = ({ key, product, userData, setUserData, userLikesProduct, li
 
     return (
         <div 
-        className={style.catgoryProductComponent} 
+        className={style.categoryProductComponent} 
         key={key}
         >
         {

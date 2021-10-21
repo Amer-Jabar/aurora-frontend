@@ -6,6 +6,12 @@ const observeIntersection = () => {
             trendingProductsContainer.style.setProperty('opacity', '1', 'important');
 
             setTimeout(() => trendingProductsContainer.style.transitionDuration = '0.25s', 3000);
+            setTimeout(() => {
+                trendingProductsContainer.style.width = '100%';
+                trendingProductsContainer.style.overflowX = 'scroll';
+                trendingProductsContainer.style.scrollbarColor = '#ebebeb white';
+                trendingProductsContainer.style.scrollbarWidth = 'thin';
+            }, 1500);
         }
     })
     io.observe(trendingProductsContainer);

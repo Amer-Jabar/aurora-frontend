@@ -12,31 +12,25 @@ const CategoryFilters = ({ categoryIndex, setCategoryData, setError, sortedBy, s
         categoryIndex !== null
         ? (
             <div className={style.categoryFilters}>
-            {
-                filters.map((filter, index) => (
-                    <span key={index}
-                    style={
-                        sortedBy === filter
-                        ? { 
-                            color: 'white', background: categoryColors[categoryIndex], 
-                            marginLeft: `${ index === 0 ? '4em' : 'none' }` 
+                {
+                    filters.map((filter, index) => (
+                        <span key={index}
+                        style={
+                            sortedBy === filter
+                            ? { color: 'white', background: categoryColors[categoryIndex] }
+                            : { color: extractColorFromString(categoryColors[categoryIndex]), background: 'white' }
                         }
-                        : { 
-                            color: extractColorFromString(categoryColors[categoryIndex]), background: 'white', 
-                            marginLeft: `${ index === 0 ? '4em' : 'none' }` 
-                        }
-                    }
-                    onClick={() => {
-                        if ( sortedBy === filter )
-                            return;
-                            
-                        setSortedBy(filter);
-                        setError(false);
-                        setCategoryData(null);
-                    }}
-                    >{ firstToUpper(filter) }</span>
-                ))
-            }
+                        onClick={() => {
+                            if ( sortedBy === filter )
+                                return;
+                                
+                            setSortedBy(filter);
+                            setError(false);
+                            setCategoryData(null);
+                        }}
+                        >{ firstToUpper(filter) }</span>
+                    ))
+                }
             </div>
         )
         : <></>

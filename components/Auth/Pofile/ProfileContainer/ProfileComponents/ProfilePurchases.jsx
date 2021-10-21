@@ -70,9 +70,11 @@ const ProfilePurchases = () => {
                     : <></>
                 }
                 {
-                    data && data.length > 0 && !pending
+                    !pending && data && data?.length > 0
                     ? <PurchaseList userPurchases={data} />
-                    : <div className={style.emptyPurchaseContainer}>No purchases have been done yet.</div>
+                    : !pending && ( !data || data?.length === 0 )
+                    ? <div className={style.emptyPurchaseContainer}>No purchases have been done yet.</div>
+                    : <></>
                 }
             </section>
         </div>
