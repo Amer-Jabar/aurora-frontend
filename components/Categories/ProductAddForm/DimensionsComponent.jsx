@@ -1,4 +1,3 @@
-import { useState, useEffect } from 'react';
 import { IoIosAddCircle } from 'react-icons/io'
 
 import style from '../../../styles/Categories.module.sass';

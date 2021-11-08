@@ -1,3 +1,5 @@
+
+import { useRouter } from 'next/router';
 import { useState, useEffect, useContext } from 'react';
 
 import { ProfileErrorContext } from '../ProfileContainer';
@@ -7,10 +9,12 @@ import getErrorMessage from '../../../../helper/auth/profile/profileContainer/pr
 import style from '../../../../styles/Profile.module.sass';
 
 
-const UploadImageForm = ({ props, forms, setForms, setUserDataFetched }) => {
+const UploadImageForm = ({ props, forms, setForms }) => {
     const { _id } = props;
     const [file, setFile] = useState(null);
     const setProfileUpdateError = useContext(ProfileErrorContext || '')?.errorSetter;
+
+    const router = useRouter();
 
     useEffect(() => {}, []);
 
@@ -28,7 +32,7 @@ const UploadImageForm = ({ props, forms, setForms, setUserDataFetched }) => {
                 onClick={(e) =>
                     uploadImageProcess(e, file, _id)
                     .then(() => setForms({ ...forms, uploadImage: false }))
-                    .then(() => setUserDataFetched(null))
+                    .then(() => router.reload())
                     .catch(({ message }) => {
                         const errorMessage = getErrorMessage(message);
                         setProfileUpdateError({ errorState: true, errorMessage })

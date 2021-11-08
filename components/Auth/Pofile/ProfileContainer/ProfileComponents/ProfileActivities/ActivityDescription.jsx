@@ -40,8 +40,6 @@ const ActivityDescription = (activityData, userId, key) => {
 
     let RenderedComponent = null;
 
-    console.log({ activityData });
-
     switch ( activityName ) {
         //Transaction Activity
         case activityPropsTable[0]:

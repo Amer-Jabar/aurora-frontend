@@ -2,16 +2,17 @@ import { serialize } from 'cookie';
 import jwt from 'jsonwebtoken';
 import axios from 'axios';
 
-import { COOKIE_NAME, SECRET_COOKIE_PASSWORD } from '../../env';
+import { COOKIE_NAME, SECRET_COOKIE_PASSWORD, SERVER_HOSTNAME, SERVER_PORT } from '../../../env';
 
 
 const catchResponseError = async ({ response }, res) => {
-    if ( response.status === 406 )
+    if ( response?.status === 406 )
         return res.status(406).send('User Already Exists!')
-    if ( response.status === 404 )
+    if ( response?.status === 404 )
         return res.status(404).send('Database Failed In Creating User Account!')
+    else
+        return res.status(409).send('An Error Occured!')
 };
-
 
 const processRequest = async (response, res) => {
     const { token } = response.data;
@@ -39,8 +40,9 @@ const Signup = async (req, res) => {
         const userToken = jwt.sign(user, SECRET_COOKIE_PASSWORD);
 
         try {
-            response = await axios.post('http://localhost:4445/api/user/signup', { userToken });
+            response = await axios.post(`http://${SERVER_HOSTNAME}:${SERVER_PORT}/api/user/signup`, { userToken });
         } catch (e) {
+            console.log(e);
             if ( e?.code === 'ECONNRESET' )
                 console.log('Server Connection Was Interrupted!');
             error = e;

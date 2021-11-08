@@ -1,10 +1,10 @@
 import Head from 'next/head';
 
 import Navbar from '../../components/Partials/Navbar';
-import MessageForm from '../../components/Contact/MessageForm'
-import InfoSection from '../../components/Contact/InfoSection'
+import MessageForm from '../../components/Contact/MessageForm';
+import InfoSection from '../../components/Contact/InfoSection';
 
-import style from '../../styles/Contact.module.sass'
+import style from '../../styles/Contact.module.sass';
 
 
 const Contact = () => {

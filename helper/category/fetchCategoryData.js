@@ -2,9 +2,15 @@ import axios from 'axios';
 
 
 const fetchCategoryData = async (categoryTitle, sortBy, length) => {
-    const url = `http://localhost:4445/api/products/category/${categoryTitle}/${sortBy}/${length}`;
+    
+    const url = `/api/server/products/category/${categoryTitle}/${sortBy}/${length}`;
 
-    return (await axios.get(url)).data;
+    try {
+        const response = await axios.get(url);
+        return response.data;
+    } catch (e) {
+        console.log('Error In Fetching Category Data On Next.JS Server.');
+    }
 }
 
 export default fetchCategoryData;

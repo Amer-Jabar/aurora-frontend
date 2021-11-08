@@ -1,7 +1,7 @@
-import Image from 'next/image';
 import { useCallback } from 'react';
 import { MdStars } from 'react-icons/md';
 import { AiFillEdit } from 'react-icons/ai';
+
 import ProfileImageComponent from '../Components/ProfileImageComponent';
 
 import style from '../../../../../styles/Profile.module.sass';

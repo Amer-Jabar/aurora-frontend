@@ -1,6 +1,6 @@
 import Image from 'next/image';
 import Link from 'next/link';
-import { useEffect } from 'react';
+import { Fragment, useEffect } from 'react';
 import jwt from 'jsonwebtoken';
 import { categoryColors } from '../CategoryBar';
 import { FaRegHeart } from 'react-icons/fa';
@@ -23,7 +23,6 @@ import {
 import { SECRET_COOKIE_PASSWORD as SECRET } from '../../../env';
 
 import style from '../../../styles/Categories.module.sass';
-import { Fragment } from 'react';
 
 
 export const likeProduct = async (productId, userId) => {
@@ -31,7 +30,6 @@ export const likeProduct = async (productId, userId) => {
     const userToken = jwt.sign(userId, SECRET);
 
     try {
-
         const like = await likeCreationAction(productId, userToken);
         const { _id: likeId } = like;
         const activityStatus = await addActivityAction(likeId, 'Like', productId, userToken);
@@ -42,6 +40,7 @@ export const likeProduct = async (productId, userId) => {
             return like;
             
     } catch (e) {
+        console.log('Error In Liking Product In Next.JS UI');
         return null;
     }
 }
@@ -56,11 +55,11 @@ export const dislikeProduct = async (likeId, userId, productId) => {
         const activityStatus = await activityDeletionAction(likeId, userToken);
         const dislike = await likeDeletionAction(likeId, userToken);
 
-        if ( productStatus.status === 200 && userStatus.status === 200 && activityStatus.status )
+        if ( productStatus.status === 200 && userStatus.status === 200 && activityStatus.status === 200 )
             return dislike;
 
     } catch (e) {
-        console.log(e);
+        console.log('Error In Disliking Product On Next.JS Server.');
         return null;
     }
 }
@@ -79,7 +78,7 @@ const ProductCard = ({ key, product, userData, setUserData, userLikesProduct, li
             ? (
                 <Fragment>
                     <Image
-                    src={`http://localhost:4445/api/products/${product._id}/image`}
+                    src={`/api/server/products/${product._id}/image`}
                     layout='fill'
                     alt='product picture'
                     quality={5}

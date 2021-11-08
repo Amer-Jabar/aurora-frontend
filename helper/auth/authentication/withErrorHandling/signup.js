@@ -6,6 +6,7 @@ const Signup = async (username, password, setAuthenticated, error, setError) => 
         await SignupAction({ username, password });
         setAuthenticated(true);
     } catch (e) {
+        console.log(e);
         if ( e == errMessage(406) )
             setError({
                 ...error,

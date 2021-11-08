@@ -3,7 +3,7 @@ const userLikesProduct = (userLikes, product) => {
     if ( !userLikes || !product )
         return;
 
-    let likeId = null;
+    let likeId = false;
     userLikes.forEach(like => like?.product?._id === product?._id ? likeId = like._id : null);
     return likeId;
 }

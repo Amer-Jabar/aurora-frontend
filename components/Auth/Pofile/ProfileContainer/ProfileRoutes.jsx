@@ -1,7 +1,6 @@
 import dynamic from 'next/dynamic';
 import { Fragment, useState, useEffect } from 'react';
 
-// import ProfileInfo from './ProfileComponents/ProfileInfo';
 import ProcessLoadingSpinner from '../../../Partials/ProcessLoadingSpinner';
 
 import style from '../../../../styles/Profile.module.sass';
@@ -24,37 +23,22 @@ const ProfileRoutes = ({ props, forms, setForms, setDescriptiveIndex, setUserDat
     useEffect(() => {
         if ( !ProfileInfo )
             setProfileInfo(dynamic(() => import('./ProfileComponents/ProfileInfo'), 
-                {
-                    loading: () => <ProcessLoadingSpinner loading={true} fillScreen={true} relative={true} />,
-                    suspense: true
-                }
+                { loading: () => <ProcessLoadingSpinner loading={true} fillScreen={true} relative={true} /> }
             ))
         if ( !ProfileSettings )
             setProfileSettings(dynamic(() => import('./ProfileComponents/ProfileSettings'), 
-                {
-                    loading: () => <ProcessLoadingSpinner loading={true} fillScreen={true} relative={true} />,
-                    suspense: true
-                }
+                { loading: () => <ProcessLoadingSpinner loading={true} fillScreen={true} relative={true} /> }
             ))
     }, [props, ProfileInfo, ProfileSettings]);
 
     const ProfileActivities = dynamic(() => import('./ProfileComponents/ProfileActivities'), 
-        {
-            loading: () => <ProcessLoadingSpinner loading={true} fillScreen={true} relative={true} />,
-            suspense: true
-        }
+        { loading: () => <ProcessLoadingSpinner loading={true} fillScreen={true} relative={true} /> }
     );
     const ProfileAnalytics = dynamic(() => import('./ProfileComponents/ProfileAnalytics'), 
-        {
-            loading: () => <ProcessLoadingSpinner loading={true} fillScreen={true} relative={true} />,
-            suspense: true
-        }
+        { loading: () => <ProcessLoadingSpinner loading={true} fillScreen={true} relative={true} /> }
     );
     const ProfilePurchases = dynamic(() => import('./ProfileComponents/ProfilePurchases'), 
-        {
-            loading: () => <ProcessLoadingSpinner loading={true} fillScreen={true} relative={true} />,
-            suspense: true
-        }
+        { loading: () => <ProcessLoadingSpinner loading={true} fillScreen={true} relative={true} /> }
     );
 
     return (

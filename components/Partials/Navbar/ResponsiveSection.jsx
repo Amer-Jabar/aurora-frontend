@@ -27,7 +27,7 @@ const setPrefMargin = ({ current: sectionRef }, path) => {
     }
 };
 
-const ResponsiveSection = ({ hamburgerIsOpen, profilePath, loggedIn, userInfo, token, dispatcher, pageLoadingContext }) => {
+const ResponsiveSection = ({ hamburgerIsOpen, profilePath, router, loggedIn, userInfo, token, dispatcher, pageLoadingContext }) => {
     
     const { pathname } = useRouter();
     const sectionRef = useRef();
@@ -38,6 +38,7 @@ const ResponsiveSection = ({ hamburgerIsOpen, profilePath, loggedIn, userInfo, t
         <div className={style.mobileResponsiveSection} ref={sectionRef}>
             <Links
             profilePath={profilePath}
+            router={router}
             loggedIn={loggedIn}
             pageLoadingContext={pageLoadingContext}
             userInfo={userInfo}

@@ -5,7 +5,7 @@ import { CgSmileSad } from 'react-icons/cg';
 import { IoIosAddCircle } from 'react-icons/io';
 
 import ProductCard from './CategoryView/ProductCard';
-import fetchUserData from '../../helper/category/categoryView/fetchUserData';
+import fetchUserLikes from '../../helper/category/categoryView/fetchUserLikes';
 import userLikesProduct from '../../helper/category/categoryView/userLikesProduct';
 import { categoryColors } from './CategoryBar';
 
@@ -21,7 +21,7 @@ const CategoryView = ({ selectedCategory, categoryData, loading, error, setProdu
 
     useEffect(() => {
         if ( !userData && categoryData && userId )
-            fetchUserData(userId)
+            fetchUserLikes(userId)
             .then(response => setUserData(response))
             .catch(err => console.log(err))
     }, [categoryData, userId, userData]);

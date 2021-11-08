@@ -1,6 +1,5 @@
 import Image from 'next/image';
 import { useState, useEffect } from 'react';
-
 import { GiSofa, GiForkKnifeSpoon, GiWallLight } from 'react-icons/gi';
 import { IoBedOutline } from 'react-icons/io5';
 import { MdToys } from 'react-icons/md';
@@ -10,6 +9,7 @@ import { ImSpinner3 } from 'react-icons/im';
 import { BiRectangle } from 'react-icons/bi';
 import { CgSmileSad } from 'react-icons/cg';
 import { productCategories } from '../../pages/Pages/Categories';
+
 import fetchCategoryTourProducts from '../../helper/home/categoriesNavigator/fetchCategoryTourProducts';
 
 import style from '../../styles/Home.module.sass';
@@ -69,7 +69,7 @@ const CategoriesNavigator = () => {
                         categoryTourProducts?.length > 0 ? categoryTourProducts.map(({ _id, name, price }, index) => (
                             <div className={style.categoryTourProductComponent} key={index}>
                                 <Image
-                                src={`http://localhost:4445/api/products/${_id}/image`}
+                                src={`/api/server/products/${_id}/image`}
                                 layout='fill'
                                 alt='category tour image'
                                 quality={10}

@@ -1,14 +1,13 @@
 import axios from 'axios';
 import jwt from 'jsonwebtoken';
 
-import { SECRET_COOKIE_PASSWORD as SECRET } from '../../env';
-
 import addActivityAction from './addActivityAction';
+import { SECRET_COOKIE_PASSWORD as SECRET } from '../../env';
 
 
 const updateUserProduct = async (userId, userToken, productId) => {
     
-    const url = `http://localhost:4445/api/users/${userId}/product`;
+    const url = `/api/server/users/${userId}/product`;
 
     let response = null;
 
@@ -21,14 +20,14 @@ const updateUserProduct = async (userId, userToken, productId) => {
 
         return response;
     } catch (e) {
+        console.log('Error In Updating User Product On Next.JS Server.');
         return 403;
     }
 }
 
 const updateUserActivity = async (userId, userToken, activityId) => {
     
-    const url = `http://localhost:4445/api/users/${userId}/activity`;
-
+    const url = `/api/server/users/${userId}/activity`;
     let response = null;
 
     try {
@@ -40,38 +39,52 @@ const updateUserActivity = async (userId, userToken, activityId) => {
 
         return response;
     } catch (e) {
+        console.log('Error In Updating User Activity On Next.JS Server.');
         return 403;
     }
 }
 
 const postProductBody = async (name, category, price, entity, details, dimensions, description, userId, userToken) => {
 
-    const productUrl = `http://localhost:4445/api/products`;
-    const response = await axios.post(productUrl, {
-        products: [{
-            name, category, price, entity, details, dimensions, description, owner: userId
-        }]
-    }, {
-        headers: {
-            authorization: `Bearer ${userToken}`
-        }
-    });
+    const url = '/api/server/products';
 
-    return response.data[0];
+    try {
+        const response = await axios.post(url, {
+            products: [{
+                name, category, price, entity, details, dimensions, description, owner: userId
+            }]
+        }, {
+            headers: {
+                authorization: `Bearer ${userToken}`
+            }
+        });
+    
+        return response.data[0];
+    } catch (e) {
+        console.log('Error In Product Form Body On Next.JS Server.');
+        return null;
+    }
 }
 
 const postProductImage = async (productId, productImage, userToken) => {
-    const productImageUrl = `http://localhost:4445/api/products/${productId}/image`;
+    
+    const url = `/api/server/products/${productId}/image`;
 
     const form = new FormData();
     form.append('image', productImage, productId);
 
-    const response = await axios.post(productImageUrl, form, {
-        headers: {
-            authorization: `Bearer ${userToken}`
-        }
-    });
-    return response.data;
+    try {
+        const response = await axios.post(url, form, {
+            headers: {
+                authorization: `Bearer ${userToken}`
+            }
+        });
+        return response.data;
+    } catch (e) {
+        console.log(e);
+        console.log('Error In Posting Product Image On Next.JS Server.');
+        return null;
+    }
 }
 
 const postProduct = async (name, category, price, entity, details, dimensions, description, image, userId) => {
@@ -88,7 +101,7 @@ const postProduct = async (name, category, price, entity, details, dimensions, d
         if ( productId && productImage && activity && userActivity.status === 200 && userProduct.status === 200 )
             return true;
     } catch (e) {
-        console.log(e);
+        console.log('Error In Posting Product On Next.JS Server.');
     }
 }
 

@@ -18,9 +18,7 @@ const Stores = () => {
         zoom: 10
     });
 
-    useEffect(() => {
-        setHeightFull();
-    }, [storeLocations]);
+    useEffect(() => setHeightFull(), [storeLocations]);
 
     return (
         <main className={style.storePageContainer}>

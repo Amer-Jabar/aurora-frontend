@@ -12,7 +12,7 @@ const UploadImageProcess = async (e, image, _id) => {
     const body = new FormData();
     body.append('image', image, image.name);
 
-    await axios.post(`http://localhost:4445/api/users/${_id}/image`, body, {
+    await axios.post(`/api/server/users/${_id}/image`, body, {
         headers: { authorization: `Bearer ${token}` }
     });
 }

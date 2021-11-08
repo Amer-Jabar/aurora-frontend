@@ -12,7 +12,7 @@ const getProfileStoreProps = async (_id) => {
     let response = null;
 
     const requestPromises = activityPropsTable.map(property => {
-        const url = `http://localhost:4445/api/users/${_id}/${property}/length`;
+        const url = `/api/server/users/${_id}/${property}/length`;
         return axios.get(url, {
             headers: {
                 authorization: `Bearer ${userId}`

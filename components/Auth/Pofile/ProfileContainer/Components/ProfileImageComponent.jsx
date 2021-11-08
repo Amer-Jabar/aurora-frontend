@@ -13,11 +13,11 @@ const ProfileImageComponent = (key = '0', userId, imageId, size) => useCallback(
             <Image
             key={key}
             loader={({ src }) => src}
-            src={`http://localhost:4445/api/users/${userId}/image`}
+            src={`/api/server/users/${userId}/image`}
             width={ size ? size : 50}
             height={ size ? size : 50}
             alt='null'
-            quality={25}
+            quality={15}
             priority={true}
             loading='eager'
             ></Image>

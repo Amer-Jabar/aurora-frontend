@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { GoogleMap, useJsApiLoader, Marker, InfoWindow } from '@react-google-maps/api';
 
 import StoreFetchError from './StoreFetchError';
@@ -6,7 +6,6 @@ import { GOOGLE_MAPS_API_KEY as KEY } from '../../env';
 import fetchStoresData from '../../helper/stores/fetchStoresData';
 
 import style from '../../styles/Stores.module.sass';
-import { useEffect } from 'react';
 
 const GoogleMaps = ({ center, storeLocations, setStoreLocations }) => {
 

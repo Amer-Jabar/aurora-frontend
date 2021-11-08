@@ -1,4 +1,5 @@
-import { useEffect, useContext } from 'react';
+import { useRouter } from 'next/router';
+import { useContext } from 'react';
 
 import { ProfileErrorContext } from '../ProfileContainer';
 import removeImageProcess from '../../../../helper/auth/profile/forms/removeImageProcess';
@@ -7,9 +8,11 @@ import getErrorMessage from '../../../../helper/auth/profile/profileContainer/pr
 import style from '../../../../styles/Profile.module.sass';
 
 
-const UploadImageForm = ({ props, forms, setForms, setUserDataFetched }) => {
+const UploadImageForm = ({ props, forms, setForms }) => {
     const { _id } = props;
     const setProfileUpdateError = useContext(ProfileErrorContext || '')?.errorSetter;
+
+    const router = useRouter();
 
     return (
         <div className={style.profileDescriptiveFormContainer}>
@@ -19,7 +22,7 @@ const UploadImageForm = ({ props, forms, setForms, setUserDataFetched }) => {
                 onClick={(e) =>
                     removeImageProcess(e, _id)
                     .then(() => setForms({ ...forms, uploadImage: false }))
-                    .then(() => setUserDataFetched(null))
+                    .then(() => router.reload())
                     .catch(({ message }) => {
                         const errorMessage = getErrorMessage(message);
                         setProfileUpdateError({ errorState: true, errorMessage })

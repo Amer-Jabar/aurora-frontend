@@ -10,10 +10,10 @@ import ProfileContainer from '../../../components/Auth/Pofile/ProfileContainer';
 import loadProfile from '../../../helper/auth/profile/loadProfile';
 import LoadingSpinner from '../../../components/Partials/ProcessLoadingSpinner';
 
-import { SECRET_COOKIE_PASSWORD as SECRET } from '../../../env';
+import { SECRET_COOKIE_PASSWORD as SECRET, SERVER_HOSTNAME, SERVER_PORT } from '../../../env';
 
 
-const Profile = ({ props: staticProps }) => {
+const Profile = (staticProps) => {
 
     const [props, setProps] = useState(null);
     const [mounted, setMounted] = useState(false);
@@ -23,10 +23,9 @@ const Profile = ({ props: staticProps }) => {
     const userState = useSelector(state => state.User);
 
     useEffect(() => {
-
         const { userInfo } = userState;
 
-        const { username: profileUsername, _id: profileId } = staticProps;
+        const { username: profileUsername, _id: profileId } = staticProps || { username: null, _id: null };
         const { username: loggedInUsername, _id: loggedInId } = userInfo || { username: null, _id: null };
 
         if ( profileUsername == loggedInUsername && profileId == loggedInId )
@@ -57,9 +56,8 @@ const Profile = ({ props: staticProps }) => {
             </Head>
             <Navbar></Navbar>
             {
-                !props
-                ? ( <LoadingSpinner /> )
-                : (
+                props && staticProps
+                ? (
                     <Fragment>
                         <ProfileContainer 
                         props={props}
@@ -68,31 +66,32 @@ const Profile = ({ props: staticProps }) => {
                         ></ProfileContainer>
                     </Fragment>
                 )
+                : ( <LoadingSpinner /> )
             }
         </div>
     )
 }
 
-Profile.getInitialProps = async ({ query: { Profile } }) => {
+export const getServerSideProps = async (context) => {
 
-    const [_, userId] = Profile.split('-');
+    const userId = context.query.Profile.split('-')[1];
     const userToken = sign(userId, SECRET);
     
     let props = null;
-
     try {
-        props = (await axios.get(`http://localhost:4445/api/users/${userId}`, {
+        props = (await axios.get(`http://${SERVER_HOSTNAME}:${SERVER_PORT}/api/users/${userId}`, {
             headers: {
                 authorization: `Bearer ${userToken}`
             }
         })).data;
-    } catch (e) {} 
-    finally {
+    } catch (e) {
+        console.log(e);
+    } finally {
         if ( !props )
-            return console.log('An error occured fetching user`s static props!');
-
-        return { props }
+            console.log('An error occured fetching user`s static props!');
     }
+
+    return { props }
 }
 
 export default Profile;

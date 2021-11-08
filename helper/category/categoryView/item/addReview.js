@@ -9,7 +9,7 @@ const createReviewAction = async (ownerId, productId, reviewContent, reviewRatin
     let response = null;
 
     try {
-        response = await axios.post('http://localhost:4445/api/reviews', {
+        response = await axios.post(`/api/server/reviews`, {
             ownerId, productId, reviewContent, reviewRating
         }, {
             headers: {
@@ -27,7 +27,7 @@ const createActivityAction = async (productId, activityId, activityName, userTok
     let response = null;
 
     try {
-        response = await axios.post('http://localhost:4445/api/activities', {
+        response = await axios.post(`/api/server/activities`, {
             productId, activityId, activityName
         }, {
             headers: {
@@ -45,7 +45,7 @@ const updateProductAction = async (productId, reviewId, userToken) => {
     let response = null;
 
     try {
-        response = await axios.post(`http://localhost:4445/api/products/item/${productId}/review`, { reviewId }, {
+        response = await axios.post(`/api/server/products/item/${productId}/review`, { reviewId }, {
             headers: {
                 authorization: `Bearer ${userToken}`
             }
@@ -58,13 +58,13 @@ const updateProductAction = async (productId, reviewId, userToken) => {
 
 const updateUserAction = async (productId, reviewId, userId, userToken, activityId) => {
     try {
-        await axios.put(`http://localhost:4445/api/users/${userId}/activity`, { activityId }, {
+        await axios.put(`/api/server/users/${userId}/activity`, { activityId }, {
             headers: {
                 authorization: `Bearer ${userToken}`
             }
         })
 
-        const response = await axios.post(`http://localhost:4445/api/users/${userId}/review`, { productId, reviewId }, {
+        const response = await axios.post(`/api/server/users/${userId}/review`, { productId, reviewId }, {
             headers: {
                 authorization: `Bearer ${userToken}`
             }

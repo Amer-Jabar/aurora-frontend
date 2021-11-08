@@ -3,12 +3,12 @@ import Image from 'next/image';
 import { Fragment } from 'react';
 
 import { adjustDate } from '../ProfileActivities/ActivityDescription';
+import { SERVER_HOSTNAME, SERVER_PORT } from '../../../../../../env';
 
 import style from '../../../../../../styles/Profile.module.sass';
 
 
 const PurchaseList = ({ userPurchases }) => {
-    console.log(userPurchases);
     return (
         <Fragment>
             { 
@@ -17,7 +17,7 @@ const PurchaseList = ({ userPurchases }) => {
                     <div className={style.purchaseCardDividor}>
                         <Image
                         alt='product image'
-                        src={`http://localhost:4445/api/products/${purchase?.product?._id}/image`}
+                        src={`/api/server/products/${purchase?.product?._id}/image`}
                         width={150}
                         height={135}
                         layout='fixed'

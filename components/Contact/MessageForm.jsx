@@ -1,5 +1,4 @@
-import { Fragment } from 'react';
-import { useState, useEffect, useRef } from 'react';
+import { Fragment, useState, useEffect, useRef } from 'react';
 import axios from 'axios';
 import { AiOutlineLoading3Quarters } from 'react-icons/ai';
 import { IoCheckmarkCircleOutline } from 'react-icons/io5'
@@ -41,13 +40,13 @@ const MessageForm = () => {
         const { current: messageElement } = messageRef;
         
         setButtonLoading(true);
-        axios.post('http://localhost:4445/api/messages', {
+        axios.post(`/api/server/messages`, {
             username: nameElement.value,
             email: emailElement.value,
             message: messageElement.value
         })
         .then(() => setMessageSubmitted(true))
-        .catch(() => setMessageSubmitError(true))
+        .catch((e) => setMessageSubmitError(true))
         .finally(() => {
             nameElement.value = '';
             emailElement.value = '';

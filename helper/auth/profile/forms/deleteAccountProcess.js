@@ -8,7 +8,7 @@ const deleteAccountProcess = async (_id) => {
     
     const token = jwt.sign(_id, SECRET);
 
-    await axios.delete(`http://localhost:4445/api/users/${_id}`, {
+    await axios.delete(`/api/server/users/${_id}`, {
         headers: {
             authorization: `Bearer ${token}`
         }

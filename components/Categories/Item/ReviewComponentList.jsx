@@ -30,7 +30,7 @@ const ReviewComponentList = ({ reviews }) => {
                                                     alt='profile picture for review component'
                                                     src={
                                                         review?.owner?.image
-                                                        ? `http://localhost:4445/api/users/${review?.owner?._id}/image`
+                                                        ? `/api/server/users/${review?.owner?._id}/image`
                                                         : blankProfileImage
                                                     }
                                                     width={100}

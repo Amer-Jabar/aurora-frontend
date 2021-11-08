@@ -5,74 +5,98 @@ import { SECRET_COOKIE_PASSWORD as SECRET } from '../../../../../env';
 
 
 const checkUserDeposit = async (userId, userToken, productEntity, productPrice) => {
-    const request = await axios.get(`http://localhost:4445/api/users/${userId}/deposit`, {
-        headers: {
-            authorization: `Bearer ${userToken}`
-        }
-    });
-    const { deposit } = request.data;
-
-    if ( (productEntity && productPrice) && (productEntity * productPrice) > deposit )
-        throw new Error;
+    try {
+        const response = await axios.get(`/api/server/users/${userId}/deposit`, {
+            headers: {
+                authorization: `Bearer ${userToken}`
+            }
+        });
+        const { deposit } = response.data;
     
-    return deposit;
+        if ( (productEntity && productPrice) && (productEntity * productPrice) > deposit )
+            throw new Error('');
+        
+        return deposit;
+    } catch (e) {
+        console.log('Error In Checking User Deposit On Next.JS Server.');
+    }
 }
 
 const checkProductAvailability = async (productId, productEntity) => {
-    const request = await axios.get(`http://localhost:4445/api/products/${productId}/entity`);
-    if ( request.data.entity < productEntity )
-        throw new Error;
+    try {
+        const response = await axios.get(`/api/server/products/${productId}/entity`);
+        if ( response.data.entity < productEntity )
+            throw new Error('');
 
-    return request.data.entity;
+        return response.data.entity;
+    } catch (e) {
+        console.log('Error In Checking Product Availability On Next.JS Server.');
+    }
 }
 
 const createTransactionAction = async (userToken, productId, ownerId, productEntity, productPrice) => {
-    const request = await axios.post('http://localhost:4445/api/transactions', {
-        productId, ownerId, productEntity, productPrice
-    }, {
-        headers: {
-            authorization: `Bearer ${userToken}`
-        }
-    })
-
-    if ( !request.data.transaction )
-        throw new Error;
-
-    return request.data.transaction;
+    try {
+        const response = await axios.post('/api/server/transactions', {
+            productId, ownerId, productEntity, productPrice
+        }, {
+            headers: {
+                authorization: `Bearer ${userToken}`
+            }
+        })
+    
+        if ( !response.data.transaction )
+            throw new Error('');
+    
+        return response.data.transaction;
+    } catch (e) {
+        console.log('Error In Creating Transaction Action On Next.JS Server.');
+    }
 }
 
 const createActivityAction = async (userToken, productId, activityId, activityName) => {
-    const request = await axios.post('http://localhost:4445/api/activities', {
-        productId, activityId, activityName
-    }, {
-        headers: {
-            authorization: `Bearer ${userToken}`
-        }
-    })
-
-    if ( !request.data )
-        throw new Error;
-
-    return request.data;
+    try {
+        const response = await axios.post('/api/server/activities', {
+            productId, activityId, activityName
+        }, {
+            headers: {
+                authorization: `Bearer ${userToken}`
+            }
+        })
+    
+        if ( !response.data )
+            throw new Error('');
+    
+        return response.data;
+    } catch (e) {
+        return console.log('Error In Creating Activity On Next.JS Server.');
+    }
 }
 
 const updateUserTransactions = async (userId, userToken, transactionId, userRole) => {
-    await axios.post(`http://localhost:4445/api/users/${userId}/transaction`, { transactionId, userRole }, {
-        headers: {
-            authorization: `Bearer ${userToken}`
-        }
-    });
+    try {
+        await axios.post(`/api/server/users/${userId}/transactions`, { transactionId, userRole }, {
+            headers: {
+                authorization: `Bearer ${userToken}`
+            }
+        });
+    } catch (e) {
+        console.log('Error In Updating User Transactions On Next.JS Server.');
+    }
 }
 
 const updateUserActivities = async (userId, userToken, activityId) => {
-    const request = await axios.put(`http://localhost:4445/api/users/${userId}/activity`, { activityId }, {
-        headers: {
-            authorization: `Bearer ${userToken}`
-        }
-    });
-
-    if ( request.status !== 200 )
-        throw new Error;
+    try {
+        const response = await axios.put(`/api/server/users/${userId}/activity`, { activityId }, {
+            headers: {
+                authorization: `Bearer ${userToken}`
+            }
+        });
+    
+        if ( response.status !== 200 )
+            throw new Error('');
+    } catch (e) {
+        console.log('Error In Updating User Activities On Next.JS Server.');
+    }
 }
 
 const updateUserDeposit = async (userId, userToken, productEntity, productPrice, userDeposit, userRole) => {
@@ -83,11 +107,15 @@ const updateUserDeposit = async (userId, userToken, productEntity, productPrice,
     ? userDeposit + (productEntity * productPrice)
     : null;
 
-    await axios.put(`http://localhost:4445/api/users/${userId}/deposit`, { deposit }, {
-        headers: {
-            authorization: `Bearer ${userToken}`
-        }
-    });
+    try {
+        await axios.put(`/api/server/users/${userId}/deposit`, { deposit }, {
+            headers: {
+                authorization: `Bearer ${userToken}`
+            }
+        });    
+    } catch (e) {
+        console.log('Error In Updating User Deposit On Next.JS Server.');
+    }
 }
 
 const updateUserStatus = async (userId, userToken, productEntity, productPrice, userDeposit, transactionId, activityId) => {
@@ -103,16 +131,20 @@ const updateOwnerStatus = async (ownerId, ownerToken, productEntity, productPric
 }
 
 const updateProductStatus = async (userToken, productId, productEntity) => {
-    const request = await axios.put(`http://localhost:4445/api/products/${productId}/entity`, {
-        entity: productEntity
-    }, {
-        headers: {
-            authorization: `Bearer ${userToken}`
-        }
-    })
-
-    if ( request.status !== 200 )
-        throw new Error;
+    try {
+        const response = await axios.put(`/api/server/products/${productId}/entity`, {
+            entity: productEntity
+        }, {
+            headers: {
+                authorization: `Bearer ${userToken}`
+            }
+        })
+    
+        if ( response.status !== 200 )
+            throw new Error('');    
+    } catch (e) {
+        console.log('Error In Updating Product Status On Next.JS Server.');
+    }
 }
 
 const purchaseProductAction = async (userId, ownerId, productId, productEntity, productPrice) => {

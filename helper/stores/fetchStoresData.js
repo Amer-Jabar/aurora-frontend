@@ -1,11 +1,9 @@
 import axios from 'axios';
 
-const fetchStoresData = async () => {
-    const url = 'http://localhost:4445/api/stores';
 
-    const data = (await axios.get(url)).data;
-    console.log(data);
-    return data;
+const fetchStoresData = async () => {
+    const response = await axios.get('/api/server/stores');
+    return response.data;
 }
 
 export default fetchStoresData;

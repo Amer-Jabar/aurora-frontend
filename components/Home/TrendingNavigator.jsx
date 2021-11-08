@@ -67,7 +67,7 @@ const TrendingNavigator = () => {
                                     </div>
                                     <Image
                                     className={style.trendingProductComponentImage}
-                                    src={`http://localhost:4445/api/products/${_id}/image`}
+                                    src={`/api/server/products/${_id}/image`}
                                     height='288'
                                     width='288'
                                     alt='trending product'

@@ -34,7 +34,9 @@ const Categories = () => {
     const [productAddForm, setProductAddForm] = useState(false);
 
     const { userInfo, loggedIn } = useSelector(state => state.User);
-    const showProductFormButton = userInfo && loggedIn
+    const showProductFormButton = userInfo && loggedIn;
+
+    console.log({ selectedCategory, categoryData });
 
     useEffect(() => {
 

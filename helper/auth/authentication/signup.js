@@ -1,8 +1,8 @@
-import axios from "axios";
+import axios from 'axios';
 
 
 const Signup = async ({ username, password }) => {
-    const response = await axios.post('/api/signup', {
+    const response = await axios.post('/api/auth/signup', {
         username,
         password
     });

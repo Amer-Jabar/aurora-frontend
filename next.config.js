@@ -1,6 +1,6 @@
 module.exports = {
   images: {
-    domains: ['localhost']
+    domains: ['localhost', '127.0.0.1']
   },
   reactStrictMode: true,
   async redirects() {
@@ -9,6 +9,14 @@ module.exports = {
         source: '/',
         destination: '/Home',
         permanent: true
+      }
+    ]
+  },
+  async rewrites() {
+    return [
+      {
+        source: '/api/server/:path*',
+        destination: `http://${'server'}:${4445}/api/:path*` // Proxy to Backend
       }
     ]
   },

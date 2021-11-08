@@ -15,7 +15,7 @@ const Header = () => {
 
     useEffect(() => {
         if ( !trendingProducts && !fetchError ) {
-            fetchTrendingProducts('http://localhost:4445/api/products/default/3')
+            fetchTrendingProducts()
             .then(products => setTrendingProducts(products))
             .catch(err => setFetchError(true))
         }
@@ -31,7 +31,7 @@ const Header = () => {
                     key={index}>
                         <Link href={`/Pages/Categories/${element._id}`} passHref>
                             <Image
-                            src={`http://localhost:4445/api/products/${element._id}/image`}
+                            src={`/api/server/products/${element._id}/image`}
                             layout='fill'
                             quality={5}
                             alt={index} />
@@ -44,7 +44,6 @@ const Header = () => {
                 <div className={style.trendingProductsFetchError}>
                     <CgSmileSad />
                     <p>oops!</p>
-                    { trendingProductsLanding(null, null, fetchError) }
                 </div>
             )
     }
@@ -55,9 +54,7 @@ const Header = () => {
                 <h1>Top Trending Brands Available Today At Our Shops.</h1>
                 <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
                 <Link href={`/Pages/Categories`}>
-                    <a>
-                        Categories
-                    </a>
+                    <a>Categories</a>
                 </Link>
             </section>
             <section className={style.headerImage}></section>

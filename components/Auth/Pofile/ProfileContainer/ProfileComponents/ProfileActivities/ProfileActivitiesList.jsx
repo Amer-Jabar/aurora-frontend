@@ -3,7 +3,7 @@ import axios from 'axios';
 import jwt from 'jsonwebtoken';
 
 import ActivityDescription from './ActivityDescription';
-import { SECRET_COOKIE_PASSWORD as SECRET } from '../../../../../../env';
+import { SECRET_COOKIE_PASSWORD as SECRET, SERVER_HOSTNAME, SERVER_PORT } from '../../../../../../env';
 
 import style from '../../../../../../styles/Profile.module.sass';
 
@@ -14,7 +14,7 @@ const fetchSortedActivityIds = async (id, upperBound) => {
 
     let response = null;
     try {
-        response = (await axios.get(`http://localhost:4445/api/users/${id}/activities/${0}-${upperBound}`, {
+        response = (await axios.get(`/api/server/users/${id}/activities/${0}-${upperBound}`, {
             headers: {
                 authorization: `Bearer ${userId}`
             }
@@ -30,7 +30,7 @@ const fetchSortedActivityIds = async (id, upperBound) => {
 const fetchPopulatedActivities = async (activityId, userId) => {
     
     const userToken = jwt.sign(userId, SECRET);
-    const url = 'http://localhost:4445/api/activities';
+    const url = `/api/server/activities`;
 
     let response = null;
 
@@ -83,8 +83,6 @@ const ActivitySection = ({ userId }) => {
     const [mounted, setMounted] = useState(false);
     const [freeze, setFreeze] = useState(false);
     const [io, setIO] = useState(null);
-
-    console.log(activities);
 
     useEffect(() => {
 

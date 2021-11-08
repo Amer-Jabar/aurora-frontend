@@ -9,7 +9,7 @@ const removeImageProcess = async (e, _id) => {
 
     const token = jwt.sign({ _id }, SECRET);
 
-    await axios.delete(`http://localhost:4445/api/users/${_id}/image`, {
+    await axios.delete(`/api/server/users/${_id}/image`, {
         headers: { authorization: `Bearer ${token}` }
     });
     

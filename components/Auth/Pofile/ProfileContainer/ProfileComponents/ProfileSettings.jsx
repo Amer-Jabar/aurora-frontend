@@ -72,7 +72,13 @@ const ProfileSettings = ({ props, forms, setForms }) => {
                         <IoIosCloseCircleOutline
                         onClick={() => setShowProfileImage(false)} />
                         <img
-                        src={ image ? `http://localhost:4445/api/users/${_id}/image` : `http://localhost:4444${profileBlankImage.src}` }
+                        src={ image 
+                            ? `/api/server/users/${_id}/image` 
+                            : `${ process.env.NODE_ENV === 'development' 
+                                ? `http://localhost:4444${profileBlankImage.src}`
+                                : `http://localhost:${process.env.PORT}${profileBlankImage.src}`
+                                }` 
+                        }
                         alt='profile image'
                         ></img>
                     </div>

@@ -8,6 +8,7 @@ import { MdError } from 'react-icons/md';
 
 import Navbar from '../../../../components/Partials/Navbar';
 import purchaseProductAction from '../../../../helper/category/categoryView/item/shop/purchaseProductAction';
+import { SERVER_HOSTNAME, SERVER_PORT } from '../../../../env';
 
 import style from '../../../../styles/ItemShop.module.sass';
 
@@ -122,14 +123,14 @@ const Shop = ({ props }) => {
     )
 }
 
-Shop.getInitialProps = async (context) => {
+export const getServerSideProps = async (context) => {
     
-    const itemId = context.query?.ItemId;
+    const { ItemId } = context.query;
 
     let props;
 
     try {
-        props = await axios.get(`http://localhost:4445/api/products/${itemId}`);
+        props = await axios.get(`http://${SERVER_HOSTNAME}:${SERVER_PORT}/api/products/${ItemId}`);
     } catch (e) {
         props = null;
     }

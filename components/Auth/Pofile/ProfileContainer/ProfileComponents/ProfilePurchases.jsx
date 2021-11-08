@@ -5,7 +5,7 @@ import jwt from 'jsonwebtoken';
 
 import ProcessLoadingSpinner from '../../../../Partials/ProcessLoadingSpinner';
 import PurchaseList from './ProfilePurchases/PurchasesList';
-import { SECRET_COOKIE_PASSWORD as SECRET } from '../../../../../env';
+import { SECRET_COOKIE_PASSWORD as SECRET, SERVER_HOSTNAME, SERVER_PORT } from '../../../../../env';
 
 import style from '../../../../../styles/Profile.module.sass';
 
@@ -18,7 +18,7 @@ const loadUserPurchases = async (userId) => {
     const userToken = jwt.sign(userId, SECRET);
 
     try {
-        const response = await axios.get(`http://localhost:4445/api/users/${userId}/purchases`, {
+        const response = await axios.get(`/api/server/users/${userId}/purchases`, {
             headers: {
                 authorization: `Bearer ${userToken}`
             }

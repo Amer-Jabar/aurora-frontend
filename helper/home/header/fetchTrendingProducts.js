@@ -1,13 +1,13 @@
 import axios from 'axios';
 
 
-const fetchTrendingProducts = async (url) => {
+const fetchTrendingProducts = async (url = '/api/server/products/default/3') => {
 
-    let products = null;
+    let response = null;
 
     try {
-        products = await axios.get(url);
-        return products.data;
+        response = await axios.get(url);
+        return response.data;
     } catch (e) {
         return null;
     }
