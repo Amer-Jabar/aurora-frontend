@@ -18,6 +18,7 @@ COPY . /usr/src/app
 
 #Sets an environment variable
 ENV PORT 3000
+ENV NODE_ENV production
 
 #Execute commands in a new layer on top of the current image and commit the results
 RUN npm run build
