@@ -42,7 +42,7 @@ const ProfileRoutes = ({ props, forms, setForms, setDescriptiveIndex, setUserDat
     );
 
     return (
-        <div id='profileRoutesContainer' style={{ height: '100%' }}>
+        <div id='profileRoutesContainer' style={{ height: '100%', overflowY: 'scroll' }}>
             {
                 baseView
                 ? (
