@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import Image from 'next/image';
 import { useEffect, useState, useContext, Fragment } from 'react';
 import { useRouter } from 'next/router';
 import { useSelector, useDispatch } from 'react-redux';
@@ -11,6 +12,8 @@ import handleCookieVerification from '../../helper/navbar/handleCookieVerificati
 import getTokenOfCookie from '../../helper/navbar/getTokenOfCookie';
 import { LoadingContext } from './PageRoutedLoading';
 
+import imageSrc from '../../public/Home/Aurora.png';
+
 import style from '../../styles/Partials/Navbar.module.sass';
 
 
@@ -22,11 +25,21 @@ const Logout = async (token, dispatcher) => {
 
 export const Links = ({ profilePath, pageLoadingContext, loggedIn, userInfo, token, dispatcher, isInHamburger, pcScreen }) => (
     <Fragment>
-        <div>
-            <Link href='/Home' passHref>
-                <li className={style.brand}>Aurora</li>
-            </Link>
-        </div>
+        {
+            !isInHamburger
+            ? (
+                <div className={style.brandLogoContainer}>
+                    <Image src={imageSrc}
+                    alt='aurora logo'
+                    width={125}
+                    height={40}
+                    layout='responsive'
+                    quality={100}
+                    ></Image>
+                </div>
+            )
+            : <></>
+        }
         <div>
             <Link href='/Pages/Stores' passHref>
                 <li onClick={() => profilePath === '/Pages/Stores' ? null : pageLoadingContext(true)}>Stores</li>

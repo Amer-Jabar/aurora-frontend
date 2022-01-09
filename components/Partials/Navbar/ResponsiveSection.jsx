@@ -19,12 +19,8 @@ const setSectionStyle = (hamburgerIsOpen, { current: sectionRef }, path) => {
 }
 
 const setPrefMargin = ({ current: sectionRef }, path) => {
-    if ( path === '/Pages/Stores' )
-        sectionRef.style.marginTop = `100px`;
-    else {
-        const prefMargin = document.querySelector('#navbar').clientHeight;
-        sectionRef.style.marginTop = `${prefMargin}px`;    
-    }
+    const prefMargin = document.querySelector('#navbar').clientHeight;
+    sectionRef.style.marginTop = `${prefMargin}px`;    
 };
 
 const ResponsiveSection = ({ hamburgerIsOpen, profilePath, router, loggedIn, userInfo, token, dispatcher, pageLoadingContext }) => {

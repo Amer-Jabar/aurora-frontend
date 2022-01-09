@@ -9,7 +9,7 @@ export const observeNavbarIntersection = () => {
         if ( intersectionRatio === 0 )
             navbar.style.paddingBlock = '0.5em';
         else
-            navbar.style.paddingBlock = '1.5em';
+            navbar.style.paddingBlock = '1em';
     })
 
     io.observe(header);

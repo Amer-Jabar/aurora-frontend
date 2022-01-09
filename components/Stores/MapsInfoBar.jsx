@@ -51,11 +51,6 @@ const MapsInfoBar = ({ storeLocations, setCenter }) => {
         backgroundColor: '#2b323a'
     }
 
-    useEffect(() => {
-        setShowableNavbar();
-        window.onresize = () => setShowableNavbar();
-    }, [storeLocations])
-
     return (
         <div 
         className={style.mapsInfoBarContainer} 

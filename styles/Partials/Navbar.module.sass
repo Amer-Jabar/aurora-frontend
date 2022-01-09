@@ -15,11 +15,7 @@
 @media screen and (max-width: 768px)
     .navbar
         li
-            &:not(.brand)
-                font-size: 16px !important
-
-        .brand
-            font-size: 28px !important
+            font-size: 18px !important
 
 @media screen and (max-width: 600px)
     .navbar
@@ -29,8 +25,7 @@
             display: none !important
 
         li
-            &:not(.brand)
-                display: none
+            display: none
 
         div
             &:nth-of-type(4)
@@ -91,9 +86,13 @@
         &:hover
             opacity: 0.4 !important
 
-    .brand
-        font-size: 36px
-        font-family: 'Allura'
+    .brandLogoContainer
+        width: 60px
+        height: 60px
+
+        span
+            width: 60px !important
+            height: 60px !important
 
 .headerImageContainer
     width: 20%
@@ -119,7 +118,7 @@
     font-weight: 400
     overflow: hidden
     transition-duration: 0.5s
-    z-index: 2
+    z-index: 10
 
     li
         margin-block: 1.75em

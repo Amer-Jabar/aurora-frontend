@@ -1,12 +1,13 @@
 import Head from 'next/head';
 import { useState } from 'react';
+import { HiOutlineChevronDoubleLeft, HiOutlineChevronDoubleRight } from 'react-icons/hi';
 
 import MapsInfoBar from '../../components/Stores/MapsInfoBar'
 import GoogleMaps from '../../components/Stores/GoogleMaps'
 import Navbar from '../../components/Partials/Navbar';
-// import setHeightFull from '../../helper/stores/setHeightFull';
 
 import style from '../../styles/Stores.module.sass';
+import { useEffect } from 'react';
 
 
 const Stores = () => {
@@ -17,20 +18,33 @@ const Stores = () => {
         lng: 44.001,
         zoom: 10
     });
+    const [mapsInfoBarIsOpen, setMapsInfoBarIsOpen] = useState(false);
 
     const MobileAccessor = () => (
         <div className={style.mobileAccessorContainer}
         id='mobileAccessorContainer'
         onClick={() => {
-            const el = document.querySelector('#mapsInfoBar');
-            el.style.left = '0em';
-            const mob = document.querySelector('#mobileAccessorContainer');
-            mob.style.left = '13em';
+            if ( mapsInfoBarIsOpen ) {
+                const mapsBar = document.querySelector('#mapsInfoBar');
+                mapsBar.style.left = '-50%';
+            } else {
+                const mapsBar = document.querySelector('#mapsInfoBar');
+                mapsBar.style.left = '0%';
+            }
             
+            setMapsInfoBarIsOpen(!mapsInfoBarIsOpen);
         }}>
-            <span>Click</span>
+            <span>
+            {
+                mapsInfoBarIsOpen
+                ? <HiOutlineChevronDoubleRight />
+                : <HiOutlineChevronDoubleLeft />
+            }
+            </span>
         </div>
     )
+
+    useEffect(() => {}, [mapsInfoBarIsOpen]);
 
     return (
         <main className={style.storePageContainer}>
