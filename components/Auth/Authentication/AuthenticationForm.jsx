@@ -1,6 +1,3 @@
-import Link from 'next/link';
-import { FcGoogle } from 'react-icons/fc'
-import { AiFillFacebook, AiFillGithub } from 'react-icons/ai'
 import { GiOverInfinity } from 'react-icons/gi'
 
 import Login from '../../../helper/auth/authentication/withErrorHandling/login';
@@ -50,14 +47,6 @@ const AuthenticationForm = ({
                     await setAuthenticationLoader(setAuthenticationProcessLoading, false);
                 }}
                 >Signup</button>
-            </div>
-            <Link href='/Home'>
-                <a>forgot password?</a>
-            </Link>
-            <div className={style.additionalAuthenticationButtonGroup}>
-                <FcGoogle />
-                <AiFillFacebook />
-                <AiFillGithub />
             </div>
         </div>
     )

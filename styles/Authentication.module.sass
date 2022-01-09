@@ -1,5 +1,50 @@
 @import './Home.module'
 
+@media screen and ( max-height: 600px ) 
+    .form
+        padding: 3vw !important
+
+        h2
+            font-size: 32px !important
+
+        .formInputsContainer
+            input
+                font-size: 14px !important
+
+        .formButtonGroup
+            flex-direction: row !important
+            justify-content: space-between !important
+
+            button
+                margin: 0em !important
+                width: 48% !important
+                padding: 0.75em !important
+
+@media screen and ( max-height: 500px ) 
+
+    .authenticationContainer
+        .formContainer
+            padding: 5em 0em 0em 0em !important
+
+            .formDivider
+                border-radius: 0em !important
+
+                .form
+                    width: 80% !important
+                    padding: 0em !important
+
+                    h2
+                        font-size: 26px !important
+
+                    input
+                        padding: 0.75em !important
+                        padding-left: 1em !important
+                    
+@media screen and ( max-height: 400px ) 
+    .authenticationContainer
+        .formContainer
+            padding: 0em !important
+
 @media screen and ( max-width: 1226px )
     .formAd
         background-size: cover !important
@@ -8,12 +53,17 @@
     .formContainer
         padding: 8em 2em 2em 2em !important
 
-@media screen and ( max-width: 768px )
-    .formAd
-        display: none !important
+        .formAd
+            display: none !important
     
+        .form
+            width: 75%
+            padding: 5vw
+
+@media screen and ( max-width: 768px )
     .form
         width: 100% !important
+        padding: 5vw 8vw
 
 @media screen and ( max-width: 500px ) 
     .formContainer
@@ -30,22 +80,33 @@
             padding: 1.5em 0em !important
     
             .form
-                padding: 1vh 6vh !important
-    
-                h2
-                    font-size: 28px !important
+                padding: 1vh 4vh !important
     
                 .formInputsContainer
-                    margin-block: 5vh 2vh !important
-    
-                    label
-                        font-size: 14px !important
+                    margin-block: 5vh 0vh !important
+
+                    input
+                        font-size: 16px
         
                 .formButtonGroup
-                    margin-block: 20px 15px !important
+                    margin-bottom: 5em !important
+
+@media screen and ( max-width: 300px )
+    .formContainer
+        .formDivider
+            padding: 1.5em 0em !important
+    
+            .form
+                padding: 1vh 4vh !important
+    
+                .formInputsContainer
+                    margin-block: 5vh 0vh !important
+
+                    input
+                        font-size: 16px
         
-                .additionalAuthenticationButtonGroup
-                    margin-top: 0.5em !important
+                .formButtonGroup
+                    margin-bottom: 5em !important
 
 
 .authenticationContainer
@@ -65,10 +126,14 @@
     justify-content: space-evenly
     border-radius: 2em
     background-color: #f8fbfe
+    box-shadow: 0px 0px 10px -5px black
 
 .form
     width: 50%
-    padding: 5vh 10vh
+    padding: 5vw
+    display: flex
+    flex-direction: column
+    justify-content: space-evenly
     
     .formHeaderContainer
         display: flex
@@ -86,17 +151,14 @@
     *
         font-family: 'Varela Round'
 
-    .formInputsContainer
-        margin-block: 7vh 3vh
-
         div
-            margin-block: 3vh
+            margin-block: 3.5vh
 
             input
                 margin-top: 10px
 
     h2
-        font-size: 32px
+        font-size: 36px
         font-weight: bolder
         margin: 0px
 
@@ -108,7 +170,7 @@
         border: none
         border-radius: 2em
         background-color: #f8fbfe
-        font-size: 14px
+        font-size: 16px
         box-shadow: 0px 0px 4px -2px black
         transition-duration: 0.5s
 
@@ -127,7 +189,6 @@
         font-size: 14px
 
 .formButtonGroup
-    margin-block: 30px 15px
     display: flex
     flex-direction: column
     justify-content: space-evenly
@@ -136,36 +197,22 @@
         width: 100%
         border: none
         border-radius: 25px
-        padding: 1.25vh
-        font-size: 18px
+        padding: 1.5vh
+        font-size: 20px
         font-family: 'Alegreya Sans', sans-serif
-        margin-block: 5px
+        margin-block: 8px
         cursor: pointer
 
         &:nth-of-type(1)
             background-color: #ce965b
             color: white
+            box-shadow: 0px 0px 7px -2px black
 
         &:nth-of-type(2)
             color: #ce965b
             background-color: #fafafa
             box-shadow: 0px 0px 10px -5px black
 
-
-.additionalAuthenticationButtonGroup
-    margin-top: 20px
-    padding: 2vh
-    display: flex
-    flex-direction: row
-    justify-content: space-evenly
-    align-items: center
-
-    svg
-        width: 7vh
-        height: 7vh
-        box-shadow: 0px 0px 3px -1px #d37701
-        border-radius: 3em
-        padding: 10px
 
 .formAd
     width: 50%

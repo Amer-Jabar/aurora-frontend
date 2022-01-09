@@ -13,7 +13,7 @@ import { SERVER_HOSTNAME, SERVER_PORT } from '../../../../env';
 import style from '../../../../styles/ItemShop.module.sass';
 
 
-const Shop = ({ props }) => {
+const Shop = (props) => {
 
     const [purchaseStatus, setPurchaseStatus] = useState({
         loading: false,
@@ -134,6 +134,8 @@ export const getServerSideProps = async (context) => {
     } catch (e) {
         props = null;
     }
+
+    console.log(props);
 
     return {
         props: props.data

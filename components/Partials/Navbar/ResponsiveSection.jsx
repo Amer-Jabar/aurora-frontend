@@ -10,7 +10,7 @@ const setSectionStyle = (hamburgerIsOpen, { current: sectionRef }, path) => {
 
     if ( hamburgerIsOpen ) {
         setPrefMargin({ current: sectionRef }, path);
-        sectionRef.style.height = '55%';
+        sectionRef.style.height = '50%';
         sectionRef.style.padding = '1em';
     } else {
         sectionRef.style.height = '0em';

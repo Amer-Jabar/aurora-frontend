@@ -1,10 +1,10 @@
 import Head from 'next/head';
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 
 import MapsInfoBar from '../../components/Stores/MapsInfoBar'
 import GoogleMaps from '../../components/Stores/GoogleMaps'
 import Navbar from '../../components/Partials/Navbar';
-import setHeightFull from '../../helper/stores/setHeightFull';
+// import setHeightFull from '../../helper/stores/setHeightFull';
 
 import style from '../../styles/Stores.module.sass';
 
@@ -18,7 +18,19 @@ const Stores = () => {
         zoom: 10
     });
 
-    useEffect(() => setHeightFull(), [storeLocations]);
+    const MobileAccessor = () => (
+        <div className={style.mobileAccessorContainer}
+        id='mobileAccessorContainer'
+        onClick={() => {
+            const el = document.querySelector('#mapsInfoBar');
+            el.style.left = '0em';
+            const mob = document.querySelector('#mobileAccessorContainer');
+            mob.style.left = '13em';
+            
+        }}>
+            <span>Click</span>
+        </div>
+    )
 
     return (
         <main className={style.storePageContainer}>
@@ -42,6 +54,7 @@ const Stores = () => {
                 storeLocations={storeLocations}
                 setStoreLocations={setStoreLocations}
                 ></GoogleMaps>
+                <MobileAccessor />
             </section>
 
         </main>

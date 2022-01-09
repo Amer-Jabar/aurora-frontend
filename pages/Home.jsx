@@ -29,7 +29,7 @@ const Home = () => {
                 <title>Aurora E-Commerce</title>
                 <meta 
                 name='description' 
-                content='Aurora E-Commerce website, dilevering the best of furniture to you.'
+                content='Aurora E-Commerce website, delivering the best of furniture to you.'
                 key='desc'
                 />
                 <meta name='viewport' content='width=device-width, initial-scale=1.0' />

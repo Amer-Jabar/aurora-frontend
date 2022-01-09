@@ -7,7 +7,6 @@ import AuthenticationForm from '../../../components/Auth/Authentication/Authenti
 import ErrorMessageDisplay from '../../../components/Auth/Authentication/ErrorMessageDisplay';
 import Navbar from '../../../components/Partials/Navbar';
 import ProcessLoadingSpinner from '../../../components/Partials/ProcessLoadingSpinner';
-import { setHeightFull } from '../../../helper/partials/setHeightFull';
 
 import style from '../../../styles/Authentication.module.sass';
 
@@ -31,8 +30,6 @@ const Authentication = () => {
     }
 
     useEffect(() => {
-        setHeightFull();
-
         const defaultUserValue = document.querySelector('#usernameInput').value;
         const defaultPassValue = document.querySelector('#passwordInput').value;
 
