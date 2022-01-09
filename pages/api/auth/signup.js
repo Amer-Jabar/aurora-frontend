@@ -40,7 +40,7 @@ const Signup = async (req, res) => {
         const userToken = jwt.sign(user, SECRET_COOKIE_PASSWORD);
 
         try {
-            response = await axios.post(`http://${SERVER_HOSTNAME}:${SERVER_PORT}/api/user/signup`, { userToken });
+            response = await axios.post(`https://${SERVER_HOSTNAME}/api/user/signup`, { userToken });
         } catch (e) {
             console.log(e);
             if ( e?.code === 'ECONNRESET' )

@@ -130,7 +130,7 @@ export const getServerSideProps = async (context) => {
     let props;
 
     try {
-        props = await axios.get(`http://${SERVER_HOSTNAME}:${SERVER_PORT}/api/products/${ItemId}`);
+        props = await axios.get(`https://${SERVER_HOSTNAME}/api/products/${ItemId}`);
     } catch (e) {
         props = null;
     }

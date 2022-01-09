@@ -29,13 +29,18 @@ export const Links = ({ profilePath, pageLoadingContext, loggedIn, userInfo, tok
             !isInHamburger
             ? (
                 <div className={style.brandLogoContainer}>
-                    <Image src={imageSrc}
-                    alt='aurora logo'
-                    width={125}
-                    height={40}
-                    layout='responsive'
-                    quality={100}
-                    ></Image>
+                    <Link
+                    href={'/Home'}
+                    passHref
+                    >
+                        <Image src={imageSrc}
+                        alt='aurora logo'
+                        width={125}
+                        height={40}
+                        layout='responsive'
+                        quality={100}
+                        ></Image>
+                    </Link>
                 </div>
             )
             : <></>

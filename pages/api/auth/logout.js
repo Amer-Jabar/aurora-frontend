@@ -14,7 +14,7 @@ const Logout = async (req, res) => {
             return res.status(200).setHeader('Content-Type', 'text/plain').send({ message: 'Logout Action Frontend API.' });
 
         try {
-            response = await axios.post(`http://${SERVER_HOSTNAME}:${SERVER_PORT}/api/user/logout`, {}, {
+            response = await axios.post(`https://${SERVER_HOSTNAME}/api/user/logout`, {}, {
                 headers: {
                     authorization: `Bearer ${userToken}`
                 }

@@ -17,7 +17,7 @@ const updateHamburgerState = (hamburgerIsOpen, setHamburgerIsOpen, { current: ha
         hamburgerSpans[2].style.position = 'absolute';
     } else {
         hamburgerElement.style.justifyContent = 'space-evenly';
-
+        
         hamburgerSpans[0].style.marginLeft = '0px';
         hamburgerSpans[0].style.transform = 'rotateZ(0deg)';
         hamburgerSpans[0].style.position = 'relative';

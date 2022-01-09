@@ -1,7 +1,4 @@
 module.exports = {
-  images: {
-    domains: ['localhost', '127.0.0.1']
-  },
   reactStrictMode: true,
   async redirects() {
     return [
@@ -16,7 +13,7 @@ module.exports = {
     return [
       {
         source: '/api/server/:path*',
-        destination: `http://${'localhost'}:${4445}/api/:path*` // Proxy to Backend
+        destination: `https://amer-muhammad.herokuapp.com/api/:path*` // Proxy to Backend
       }
     ]
   },

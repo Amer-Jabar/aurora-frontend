@@ -13,7 +13,7 @@ const Header = () => (
         </svg>
     </div>
         <section>
-            <h1>Aurora Shops Brings The Best Of Luxury</h1>
+            <h1>Aurora Shops</h1>
             <p>Aurora ecommerce brings the most ideal & luxurious type of furniture and home utilities into your house.</p>
             <Link href={`/Pages/Categories`}>
                 <a>Categories</a>

@@ -22,12 +22,8 @@ const CategoryBar = ({ selectedCategory, setSelectedCategory, setSortedBy, setCa
         <h2>Categories</h2>
         <div className={style.categorySelectorContainerScroller}>
             <div
-            className={style.categorySelectorContainer} 
+            className={style.categorySelectorContainer}
             id='categorySelectorContainer'>
-                <div 
-                className={style.categorySelectorContainerBackground}
-                id='categorySelectorContainerBackground' 
-                />
                 {
                     categoriesLib.categories.map(({ title: categoryTitle, image }, index) => (
                         <div

@@ -74,12 +74,13 @@ const createActivityAction = async (userToken, productId, activityId, activityNa
 
 const updateUserTransactions = async (userId, userToken, transactionId, userRole) => {
     try {
-        await axios.post(`/api/server/users/${userId}/transactions`, { transactionId, userRole }, {
+        await axios.post(`/api/server/users/${userId}/transaction`, { transactionId, userRole }, {
             headers: {
                 authorization: `Bearer ${userToken}`
             }
         });
     } catch (e) {
+        console.log(e);
         console.log('Error In Updating User Transactions On Next.JS Server.');
     }
 }

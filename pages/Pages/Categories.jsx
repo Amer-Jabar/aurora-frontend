@@ -36,8 +36,6 @@ const Categories = () => {
     const { userInfo, loggedIn } = useSelector(state => state.User);
     const showProductFormButton = userInfo && loggedIn;
 
-    console.log({ selectedCategory, categoryData });
-
     useEffect(() => {
 
         if ( selectedCategory !== null && !categoryData && !error ) {

@@ -231,7 +231,7 @@ export const getServerSideProps = async (context) => {
     let props = null;
     
     try {
-        props = (await axios.get(`http://${SERVER_HOSTNAME}:${SERVER_PORT}/api/products/${ItemId}`)).data;
+        props = (await axios.get(`https://${SERVER_HOSTNAME}/api/products/${ItemId}`)).data;
     } catch (e) {
         console.log('Error In Fetching Item Properties On Next.JS Server.');
         props = {};

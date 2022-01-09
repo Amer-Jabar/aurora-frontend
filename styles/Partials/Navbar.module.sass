@@ -56,7 +56,9 @@
     .mobileResponsiveSection
         display: flex !important
 
-
+@media screen and (max-width: 600px)
+    .navbar
+        padding: 1em 1.5em !important
 
 .navbar
     width: 100%
@@ -68,7 +70,7 @@
     align-items: center
     position: fixed
     transition-duration: 0.5s
-    z-index: 5
+    z-index: 12
 
     div
         &:not(.hamburger)
@@ -89,6 +91,7 @@
     .brandLogoContainer
         width: 60px
         height: 60px
+        cursor: pointer
 
         span
             width: 60px !important

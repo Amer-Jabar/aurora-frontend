@@ -55,7 +55,7 @@
                     left: 10% !important
 
     .productAddFormContainer
-        padding: 2e !important
+        padding: 2em 5em !important
 
         .productAddFormHeader
             h2
@@ -86,7 +86,7 @@
         .categorySelectorContainer
             .categoryCard
                 width: 160px !important
-                height: 100px !important
+                height: 120px !important
                 margin-inline: 0.5em !important
                 padding: 0.25em !important
 
@@ -94,11 +94,8 @@
                     margin-block: -10px 0px !important
                     font-size: 12px !important
 
-                &:nth-child(1)
-                    padding: 0em 1em !important
-
     .categoryView
-        margin: 1em ​auto !important
+        margin: 1em auto !important
         padding: 0em 2em 0em !important
 
         .categoryProductListContainer
@@ -121,7 +118,9 @@
             div
                 &:nth-of-type(1)
                     width: 150px !important
-                    height: 100px !important
+
+            svg
+                margin: -9.25em auto 0em 7em !important
 
             .productComponentBody
                 padding-inline: 1em !important
@@ -160,13 +159,14 @@
                 &:nth-of-type(3)
                     width: 100% !important
                     height: max-content !important
-                    padding: 1em 0em !important
+                    padding: 0.25em 0em !important
                     bottom: 0 !important
                     flex-direction: row !important
                     border-radius: 0em !important
                     justify-content: space-evenly !important
                     align-items: stretch !important
-                    background: #a1aaac94 !important
+                    background: #e5e8f494 !important
+                    box-shadow: 0px ​0px 10px -5px black !important
 
                     .itemStatsPart
                         width: 25% !important
@@ -177,14 +177,17 @@
                         justify-content: center !important
 
                 &:nth-of-type(4)
-                    bottom: 150px !important
+                    bottom: 125px !important
+
+    .productAddFormContainer
+        padding: 2em 5em !important
 
 @media screen and ( max-width: 400px )
     .categoryBar
         .categorySelectorContainer
             .categoryCard
                 width: 125px !important
-                height: 80px !important
+                height: 115px !important
     
                 p
                     padding: 1em 0em 1em 0em !important
@@ -206,7 +209,9 @@
             div
                 &:nth-of-type(1)
                     width: 125px !important
-                    height: 75px !important
+
+            svg
+                margin: -9.25em auto 0em 5.5em !important
 
             .productComponentBody
                 padding-inline: 0.5em !important
@@ -220,6 +225,10 @@
 
                 a
                     margin: 0.5em !important
+
+    .productAddFormContainer
+        width: 90% !important
+        padding: 2em 1em !important
 
 
 .categoriesContainer
@@ -265,9 +274,6 @@
         justify-content: space-evenly
         transition-duration: 0.25s
 
-        .categorySelectorContainerBackground
-            background: linear-gradient(45deg, rgb(0, 0, 0, 0), rgb(255, 255, 255, 0.2))
-
         .categoryCard
             width: 200px
             height: 140px
@@ -310,6 +316,7 @@
         transition-duration: 0.3s
 
 .categoryView
+    width: 100%
     padding: 1em 2em
     overflow: hidden
 
@@ -335,6 +342,8 @@
 
     .categoryViewLoading
         @extend .categoryTourLoading
+        width: 80%
+        margin-inline: auto
 
         svg
             width: 2.5em
@@ -373,10 +382,13 @@
             overflow: hidden
             animation: productListContainerOpening 0.5s ease-in forwards normal
 
+            span
+                width: 100% !important
+
             svg
                 width: 2em
                 height: 2em
-                margin: -8.5em auto 0em 11.5em
+                margin: -9em auto 0em 11.5em
                 padding: 6px
                 position: absolute
                 display: block

@@ -1,3 +1,4 @@
+import Head from 'next/head';
 import { Provider } from 'react-redux';
 import store from '../redux/store';
 
@@ -9,6 +10,9 @@ import '../styles/globals.css'
 const MyApp = ({ Component, pageProps }) => {
     return (
         <Provider store={store}>
+        <Head>
+            <link rel='shortcut icon' href='/image/favicon.ico' />
+        </Head>
             <PageRoutedLoading>
                 <Component {...pageProps}/>
             </PageRoutedLoading>

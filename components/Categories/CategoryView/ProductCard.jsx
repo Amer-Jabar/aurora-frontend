@@ -79,9 +79,11 @@ const ProductCard = ({ key, product, userData, setUserData, userLikesProduct, li
                 <Fragment>
                     <Image
                     src={`/api/server/products/${product._id}/image`}
-                    layout='fill'
+                    height={150}
+                    width={'100%'}
+                    layout='fixed'
                     alt='product picture'
-                    quality={5}
+                    quality={50}
                     ></Image>
                     {
                         userData && !userIsOwner

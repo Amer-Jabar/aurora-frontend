@@ -74,10 +74,7 @@ const ProfileSettings = ({ props, forms, setForms }) => {
                         <img
                         src={ image 
                             ? `/api/server/users/${_id}/image` 
-                            : `${ process.env.NODE_ENV === 'development' 
-                                ? `http://localhost:4444${profileBlankImage.src}`
-                                : `http://localhost:${process.env.PORT}${profileBlankImage.src}`
-                                }` 
+                            : `${profileBlankImage.src}`
                         }
                         alt='profile image'
                         ></img>

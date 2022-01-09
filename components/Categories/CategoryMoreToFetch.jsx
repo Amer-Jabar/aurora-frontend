@@ -3,12 +3,13 @@ import axios from 'axios';
 import { AiOutlineLoading3Quarters } from 'react-icons/ai';
 
 import fetchCategoryData from '../../helper/category/fetchCategoryData';
+import { SERVER_HOSTNAME } from '../../env';
 
 import style from '../../styles/Categories.module.sass';
 
 
 const getCategoryDataLength = async (category) => {
-    const url = `http://localhost:4445/api/products/category/${category}/length`;
+    const url = `https://${SERVER_HOSTNAME}/api/products/category/${category}/length`;
     try {
         const length = await axios.get(url);
         return length.data.productsLength;    

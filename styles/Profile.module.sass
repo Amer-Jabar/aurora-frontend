@@ -1,4 +1,15 @@
 
+@media screen and ( max-height: 400px )
+    .profileMainContainer
+        width: 100% !important
+        height: 100% !important
+
+        .profileSidebar
+            height: 100% !important
+
+            .profileRoutesContainer
+                overflow-y: scroll !important
+
 @media screen and ( min-width: 992px )
     .pieChartContainer
         width: 40% !important
@@ -403,14 +414,12 @@
             .purchaseCardDividor                        
                 &:nth-of-type(1)
                     width: 75px !important
-                    height: 75px !important
+                    height: 100% !important
                     margin-inline: 0em !important
 
-                    div
-                        &:nth-of-type(1)
-                            width: 100% !important
-                            height: 100% !important
-                            margin: 0px !important
+                    span
+                        width: 100% !important
+                        height: 100% !important
 
                 &:nth-of-type(2)
                     .purchaseInfoValue
@@ -552,10 +561,11 @@
         line-height: 1.5
 
         span
-            background-color: #6493c4
-            color: #e9f8ff
             padding: 5px 20px
+            display: block
             border-radius: 1em
+            color: #e9f8ff
+            background-color: #6493c4
 
 .profileInfoComponent
     height: 100%
@@ -768,7 +778,6 @@
         border-radius: 1em
 
 .profileActivityComponent
-    height: 100% !important
     padding: 1em
     display: flex
     flex-direction: column
@@ -1031,6 +1040,7 @@
 
             .purchaseCardDividor
                 display: flex
+                border-radius: 0.25em
 
                 &:nth-child(1)
                     margin-inline: 0em

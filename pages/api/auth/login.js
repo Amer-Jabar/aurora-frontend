@@ -53,7 +53,7 @@ const Login = async (req, res) => {
 
             const userCredentialsToken = jwt.sign(userCredentials, SECRET);
 
-            response = await axios.get(`http://${SERVER_HOSTNAME}:${SERVER_PORT}/api/user/login`, {
+            response = await axios.get(`https://${SERVER_HOSTNAME}/api/user/login`, {
                 headers: {
                     authorization: `Bearer ${userCredentialsToken}`
                 }

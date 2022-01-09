@@ -79,7 +79,7 @@ export const getServerSideProps = async (context) => {
     
     let props = null;
     try {
-        props = (await axios.get(`http://${SERVER_HOSTNAME}:${SERVER_PORT}/api/users/${userId}`, {
+        props = (await axios.get(`https://${SERVER_HOSTNAME}/api/users/${userId}`, {
             headers: {
                 authorization: `Bearer ${userToken}`
             }

@@ -20,8 +20,6 @@ const fetchUserLikes = async (userId) => {
                 authorization: `Bearer ${userToken}`
             }
         });
-
-        console.log(response.data);
         return response.data;
     } catch (e) {
         console.log('Error In Fetching User Likes.');
