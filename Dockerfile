@@ -14,7 +14,7 @@ COPY package*.json /usr/src/app/
 RUN npm install
 
 ##Copy new files or directories into the filesystem of the container
-COPY . /usr/src/app
+COPY . /usr/src/app/
 
 #Sets an environment variable
 ENV PORT 3000
