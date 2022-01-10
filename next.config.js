@@ -13,7 +13,7 @@ module.exports = {
     return [
       {
         source: '/api/server/:path*',
-        destination: `https://amer-muhammad.herokuapp.com/api/:path*` // Proxy to Backend
+        destination: `https://aurora-shop.azurewebsites.net/api/:path*` // Proxy to Backend
       }
     ]
   },

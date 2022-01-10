@@ -83,7 +83,8 @@ const ProductCard = ({ key, product, userData, setUserData, userLikesProduct, li
                     width={'100%'}
                     layout='fixed'
                     alt='product picture'
-                    quality={50}
+                    loading='lazy'
+                    quality='100'
                     ></Image>
                     {
                         userData && !userIsOwner

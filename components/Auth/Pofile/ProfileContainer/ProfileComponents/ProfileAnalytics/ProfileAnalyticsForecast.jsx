@@ -50,6 +50,7 @@ const ProfileAnalyticsForecastComponent = ({ userProps }) => {
                                             setChart(chart)    
                                         }
                                     })
+                                    .catch(() => {});
                                 }).finally(() => {
                                     setMounted(true)
                                     setForecastIndex(index)

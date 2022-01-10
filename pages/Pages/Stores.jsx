@@ -26,10 +26,10 @@ const Stores = () => {
         onClick={() => {
             if ( mapsInfoBarIsOpen ) {
                 const mapsBar = document.querySelector('#mapsInfoBar');
-                mapsBar.style.left = '-50%';
+                mapsBar.style.setProperty('left', `-${innerWidth >= 400 ? 40 : 70}%`, 'important');
             } else {
                 const mapsBar = document.querySelector('#mapsInfoBar');
-                mapsBar.style.left = '0%';
+                mapsBar.style.setProperty('left', `0%`, 'important');
             }
             
             setMapsInfoBarIsOpen(!mapsInfoBarIsOpen);

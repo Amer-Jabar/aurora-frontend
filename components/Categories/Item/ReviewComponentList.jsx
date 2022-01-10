@@ -42,7 +42,7 @@ const ReviewComponentList = ({ reviews }) => {
                                                     <Link href={`/Pages/Auth/${review?.owner?.username}-${review?.owner?._id}`} passHref>
                                                         <a>{ review?.owner?.username }</a>
                                                     </Link>
-                                                    <div>
+                                                    <div className={style.comment}>
                                                         <p>{ review?.content }</p>
                                                         <ReviewRating value={review?.rating} />
                                                     </div>
