@@ -20,7 +20,7 @@ const Header = () => (
             </Link>
         </section>
         
-        <img className={style.backgroundLightLogo} src='/home/Aurora-white.png' alt="logo on background" />
+        <img className={style.backgroundLightLogo} src='/Home/Aurora-white.png' alt="logo on background" />
         <section className={style.headerImage}></section>
     </div>
 )
