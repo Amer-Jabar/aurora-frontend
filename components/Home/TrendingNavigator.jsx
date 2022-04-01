@@ -1,4 +1,5 @@
 import Image from 'next/image';
+import Link from 'next/link';
 import { useState, useEffect, useRef } from 'react';
 import { 
     SiAirbnb, 
@@ -63,7 +64,7 @@ const TrendingNavigator = () => {
                                         <h2>{ name }</h2>
                                         <h5>Category: { category }</h5>
                                         <p>Price: ${ price }.00</p>
-                                        <button>Shop</button>
+                                        <button><Link href={`/Pages/Categories/${_id}`}>Shop</Link></button>
                                     </div>
                                     <Image
                                     className={style.trendingProductComponentImage}
