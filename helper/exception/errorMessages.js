@@ -4,5 +4,7 @@ export const errorDisplayMessage = [
     'Account Was Not Found!',
     'Username Or Password Was Invalid!',
     'Username Already Exists In The Database!',
-    'An Error Occured In Creating User Account!'
+    'An Error Occured In Creating User Account!',
+    'Please Provide A Longer Username And Password'
 ]
+

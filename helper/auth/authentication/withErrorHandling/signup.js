@@ -6,7 +6,6 @@ const Signup = async (username, password, setAuthenticated, error, setError) => 
         await SignupAction({ username, password });
         setAuthenticated(true);
     } catch (e) {
-        console.log(e);
         if ( e == errMessage(406) )
             setError({
                 ...error,
@@ -16,6 +15,11 @@ const Signup = async (username, password, setAuthenticated, error, setError) => 
             setError({
                 ...error,
                 DatabaseError: true
+            });
+        if ( e == errMessage(400) )
+            setError({
+                ...error,
+                badCredentials: true
             });
             
         setAuthenticated(false);

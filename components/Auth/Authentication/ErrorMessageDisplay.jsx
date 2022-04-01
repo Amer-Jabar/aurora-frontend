@@ -10,7 +10,8 @@ const ErrorMessageDisplay = ({ style, errorIndex, setError }) => {
                     notFound: false,
                     unAuthenticated: false,
                     UsernameDuplicate: false,
-                    DatabaseError: false
+                    DatabaseError: false,
+                    badCredentials: false,
                 })
             }}>Ok</button>
         </div>

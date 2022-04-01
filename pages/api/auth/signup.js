@@ -2,7 +2,7 @@ import { serialize } from 'cookie';
 import jwt from 'jsonwebtoken';
 import axios from 'axios';
 
-import { COOKIE_NAME, SECRET_COOKIE_PASSWORD, SERVER_HOSTNAME, SERVER_PORT } from '../../../env';
+import { COOKIE_NAME, SECRET_COOKIE_PASSWORD, SERVER_HOSTNAME } from '../../../env';
 
 
 const catchResponseError = async ({ response }, res) => {
@@ -10,6 +10,8 @@ const catchResponseError = async ({ response }, res) => {
         return res.status(406).send('User Already Exists!')
     if ( response?.status === 404 )
         return res.status(404).send('Database Failed In Creating User Account!')
+    if ( response?.status === 400 )
+        return res.status(400).send('Please Provide A Longer Username And Password!')
     else
         return res.status(409).send('An Error Occured!')
 };

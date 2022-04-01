@@ -20,7 +20,8 @@ const Authentication = () => {
         notFound: false,
         unAuthenticated: false,
         UsernameDuplicate: false,
-        DatabaseError: false
+        DatabaseError: false,
+        badCredentials: false,
     });
     const [authenticationProcessLoading, setAuthenticationProcessLoading] = useState(false);
     const user = useSelector(state => state.User);
